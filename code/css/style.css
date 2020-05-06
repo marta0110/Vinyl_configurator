@@ -1,0 +1,354 @@
+body {
+	margin: 0;
+	overflow-x: hidden;
+}
+
+
+a {
+	color: #000;
+}
+
+/* header */
+
+.header {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	width: 100%;
+	z-index: 3;
+	height: 40px;
+}
+
+.header ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow: hidden;
+	background-color: #fff;
+}
+
+.header li a {
+	display: block;
+	padding: 20px 20px;
+	border-right: 1px solid #f4f4f4;
+	text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+	border-bottom: 3px solid #EB5D1B;
+	font-weight: 600;
+
+} 
+
+.header li:hover ~ .header li:nth-child(2){
+     font-weight: 400;
+}
+.header li:nth-child(2){
+		font-weight: 600;
+	    border-bottom: 3px solid #EB5D1B;
+	}
+
+
+/* menu */
+
+.header .menu {
+	clear: both;
+	max-height: 0;
+	transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+	cursor: pointer;
+	display: inline-block;
+	padding: 28px 20px;
+	position: relative;
+	user-select: none;
+}
+
+.header .menu-icon .navicon {
+	background: #333;
+	display: block;
+	height: 2px;
+	position: relative;
+	transition: background .6s ease-in;
+	width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+	background: #333;
+	content: '';
+	display: block;
+	height: 100%;
+	position: absolute;
+	transition: all .4s ease-in;
+	width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+	top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+	top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+	display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+	max-height: 100vh;
+	width: 100vw;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+	background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+	transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+	transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+	top: 0;
+}
+
+.header .logo {
+	background: url('images/logo_simple.png') center no-repeat;
+width: 9vw;
+    height: 55px;
+	background-size: contain;
+	justify-self: center;
+}
+
+.header .search {
+	justify-self: right;
+	padding: 20px 20px 20px 20px;
+}
+
+/* top-header elements for web v. */
+
+.header .contact_us_button,
+.header .mail,
+.header p {
+	display: none;
+}
+
+.subheader {
+	display: none;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 768px) {
+	.header .logo {
+    width: 4vw;
+    height: 60px;
+    justify-self: center;
+}
+	
+}
+
+@media (min-width: 1024px) {
+
+	.header {
+		grid-template-columns: 3vw 65vw 10vw 9vw 5vw 6vw;
+		padding: 20px 20px 0px 20px;
+
+	}
+	.header .contact_us_button,
+	.header .mail,
+	.header p {
+		display: block;
+	}
+	.header .logo {
+		height: 28px;
+		justify-self: left;
+		width:3vw;
+	}
+
+	.header .hamburger {
+		order: 2;
+	}
+
+	.header .contact_us_button {
+		order: 3;
+	}
+	.header .search {
+		order: 4;
+		padding: 4px 0 0 0;
+	}
+	.header p {
+		order: 5;
+		justify-self: right;
+		align-self: start;
+		margin-block-start: 0;
+	}
+	.header .mail {
+		order: 6;
+		justify-self: center;
+	}
+	.header li a {
+		font-size: 0.7rem;
+		font-family: "Poppins", sans-serif;
+		font-style: normal;
+		border-right: none;
+		padding: 10px 20px 20px;
+	}
+
+	.header li {
+		float: left;
+	}
+
+	.header .menu {
+		clear: none;
+		float: left;
+		max-height: none;
+	}
+	.header .menu-icon {
+		display: none;
+	}
+}
+
+button {
+	border-top-left-radius: 11px;
+	-moz-border-radius-topleft: 11px;
+	-webkit-border-top-left-radius: 11px;
+	border-bottom-right-radius: 11px;
+	-moz-border-radius-bottomright: 11px;
+	-webkit-border-bottom-right-radius: 11px;
+	background-color: #000;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 0.7rem;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	height: 32px;
+}
+
+button:hover {
+	border: 1.5px solid black;
+	background-color: #fff;
+	color: #000;
+	cursor: pointer;
+
+}
+
+@media (min-width: 1200px) {
+
+	/* TOP HEADER */
+	.header {
+		grid-template-columns: 13vw 59vw 12vw 5vw 4vw 4vw;
+		height: 50px;
+	}
+	.header .logo {
+		background: url(images/dicentia_logo.png) center no-repeat;
+		background-size: contain;
+		justify-self: center;
+		order: 1;
+		width: 13vw;
+		height: 1vw;
+		padding: 21px 0 0 0;
+	}
+	.header .hamburger {
+		width: 60vw;
+	}
+
+	.header .menu {
+		float: right;
+	}
+	.header .search,
+	.header p,
+	.header .mail {
+		padding-top: 7px;
+	}
+	.header .contact_us_button {
+		margin-left: 28px;
+		margin-top: 2px;
+	}
+	.header li a {
+		font-size: 0.8rem;
+	}
+	.header .search {
+		margin-top: 4px;
+	}
+
+	/* SUBHEADER */
+	.subheader {
+		display: block;
+		width: 100vw;
+		height: 50px;
+		background-color: black;
+		color: white;
+		display: grid;
+		grid-template-columns: 20vw 80vw;
+	}
+	.subheader h3 {
+		margin: 0;
+		font-size: 0.8rem;
+		font-family: "Roboto", sans-serif;
+		text-decoration: underline;
+		justify-self: center;
+		align-self:center;
+	}
+	.subheader .submenu{
+		justify-self: left;
+		
+	}
+	.subheader .submenu li a {
+		color: white;
+		font-size: 0.8rem;
+		font-family: "Poppins", sans-serif;
+		text-decoration: none;
+		padding: 0 55px;
+
+	}
+	.subheader .submenu li:first-child{
+		font-weight: 700;
+	
+	}
+	.subheader .submenu li {
+		display: inline;	
+	}
+	
+	/*.subheader .submenu li:hover{
+			font-weight: 700;
+	}
+	.subheader .submenu li:hover ~
+	.subheader .submenu li:first-child{
+		font-weight: 400 !importnant;
+		background-color: red;
+	}
+	*/
+
+}
+
+@media (min-width: 1400px) {
+	.header {
+		grid-template-columns: 8vw 60vw 10vw 5vw 5vw 5vw;
+	}
+	.header li a {
+		font-size: 0.85rem;
+	}
+	.header {
+		padding-left: 5vw;
+	}
+	button {
+		font-size: 0.85rem;
+		height: 5vh;
+	}
+
+
+}
