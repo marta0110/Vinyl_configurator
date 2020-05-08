@@ -3,6 +3,12 @@ body {
 	overflow-x: hidden;
 }
 
+/*
+
+to do
+
+MENU HIGHLIGHT / BUTTONS - TRANSITION, gap between, how to influence eachother / IMAGE FEATURED  / slideshow counter*/
+
 
 /* header */
 
@@ -34,6 +40,7 @@ body {
 .header .menu-btn:hover {
 	border-bottom: 3px solid #EB5D1B;
 	font-weight: 600;
+	z-index: 5 !important;
 
 } 
 .header li:hover + .header li a:nth-child(2){
@@ -139,6 +146,93 @@ width: 7vw;
 .subheader {
 	display: none;
 }
+
+/* landing page vinyl hot deals slideshow */
+#hot_deals_slideshow{
+	padding-top: 50px;
+	width: 90%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 1fr;
+}
+#hot_deals{
+	order: 2;
+}
+#hot_deals_slideshow img{
+	width:90%;
+	height:auto;
+	display: block;
+	margin: auto;   
+}
+#hot_deals_slideshow h5{
+	color: #EB5D1B;
+	font-family: "Poppins", sans-serif;
+	font-size: 0.9em;
+	font-weight: 400;
+    margin-block-end: 0.4em;
+}
+#hot_deals_slideshow h1{
+	font-family: "Poppins", sans-serif;
+	font-size: 2.2em;
+	margin-block-start: 0;
+    margin-block-end: 0;
+}
+#hot_deals_slideshow p{
+	font-family: "Roboto", sans-serif;
+	font-size: 1em;
+	margin-block-start: 0;
+}
+.button_2_col{
+	order: 1;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: 30px;
+}
+.button_2_col .price{
+	border-top-left-radius: 11px;
+	-moz-border-radius-topleft: 11px;
+	-webkit-border-top-left-radius: 11px;
+	border-bottom-right-radius: 0;
+	-moz-border-radius-bottomright: 0;
+	-webkit-border-bottom-right-radius: 0;
+	font-size: 1rem;
+	height: 45px;
+	margin-left: 5px;
+	    position: relative;
+    overflow: hidden;
+}
+.button_2_col .price:hover{
+	transition: .55s -webkit-transform cubic-bezier(.19,1,.22,1);
+    transition: .55s transform cubic-bezier(.19,1,.22,1);
+    transition: .55s transform cubic-bezier(.19,1,.22,1),.55s -webkit-transform cubic-bezier(.19,1,.22,1);
+	width: 100%;
+    display: block;
+	margin:0;
+}
+
+@keyframes example {
+  from {left:0px; background-color: black;}
+  to {right:100px;background-color: white;}
+}
+.button_2_col .buy{
+	border-top-left-radius: 0;
+	-moz-border-radius-topleft: 0;
+	-webkit-border-top-left-radius: 0;
+	border-bottom-right-radius: 11px;
+	-moz-border-radius-bottomright: 11px;
+	-webkit-border-bottom-right-radius:11px;
+	background-color: #fff;
+	border: 2px solid #000;
+    color: #000;
+	font-size: 1rem;
+	font-weight: 400;
+	height: 45px;
+	position: relative;
+    overflow: hidden;
+	
+}
+
+
 /* footer */
 
 footer{
@@ -150,7 +244,7 @@ footer{
 
 footer .logo_footer {
 	background: url('images/logo_simple_white.png') center no-repeat;
-width: 7vw;
+     width: 7vw;
     height: 67px;
 	background-size: contain;
 	justify-self: center;
@@ -375,7 +469,9 @@ footer .social_media .linkedin:hover{
 	.header {
 		grid-template-columns: 3vw 65vw 10vw 9vw 5vw 6vw;
 		padding: 20px 20px 0px 20px;
-
+	}
+	.subheader{
+		    z-index: 3 !important;
 	}
 	.header .contact_us_button,
 	.header .mail,
@@ -429,9 +525,61 @@ footer .social_media .linkedin:hover{
 	.header .menu-icon {
 		display: none;
 	}
+	/* landing page vinyl hot deals slideshow */
+	.section_1 .color{
+		background-color: #f6f6f6;
+		margin-top: 8px;
+		position: absolute;
+		width: 50%;
+		height: 100%;
+        display: block;
+		top: 60px;
+		left: 50%;
+		z-index: 1;
+		
+	}
 	
+#hot_deals_slideshow{
+	grid-template-columns: 1fr;
+}
+.hot_deals_grid{
+	order: 1;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	
+}
+#hot_deals_slideshow .hot_deals_grid .desc{
+		order: 1;
+	}
+#hot_deals_slideshow img{
+	width:100%;   
+	order: 2;
+	z-index: 2;
+}
+#hot_deals_slideshow h5{
+	font-size: 1em;
+}
+#hot_deals_slideshow h1{
+	font-size: 2.5em;
+}
+#hot_deals_slideshow p{
+	font-family: "Roboto", sans-serif;
+	font-size: 1.1em;
+	margin-block-start: 0;
+}
+.button_2_col{
+	width: 30%;
+	margin: 0 auto;
+		
+}
+
+
 /* footer */
 
+.footer{
+	position: absolute;
+	z-index: 3;
+	}
 footer .logo_footer {
     background: url('images/logo_dicentia_white.png') no-repeat;
     width:170px;
@@ -517,6 +665,9 @@ footer .social_media .linkedin:hover{
 		color: white;
 		display: grid;
 		grid-template-columns: 20vw 80vw;
+		z-index: 4;
+		position: absolute;
+		
 	}
 	.subheader h3 {
 		margin: 0;
@@ -553,6 +704,24 @@ footer .social_media .linkedin:hover{
 	.subheader .submenu li {
 		display: inline;	
 	}
+	
+/* landing page vinyl hot deals slideshow */
+.section_1 .color{
+		margin-top: 25px;	
+	}
+	
+.hot_deals_grid{
+	padding-top: 75px;
+}
+
+#hot_deals_slideshow p{
+	width: 80%;
+}
+.button_2_col .buy{
+	z-index: 2;
+		
+}
+
 /* footer */
 
 footer .logo_footer {
@@ -567,7 +736,7 @@ footer .logo_footer {
 	padding-top: 0;
 }
 
-
+}
 @media (min-width: 1400px) {
 	.header {
 		grid-template-columns: 8vw 60vw 10vw 5vw 5vw 5vw;
@@ -583,7 +752,13 @@ footer .logo_footer {
 		height: 5vh;
 		
 	}
-	
+	/*section 1 */
+	.section_1 .color{
+		margin-top: 30px;
+	}
+	#hot_deals_slideshow .hot_deals_grid .desc{
+		padding-left: 70px;
+	}
 /* footer */
 	footer {
 		position: relative;
