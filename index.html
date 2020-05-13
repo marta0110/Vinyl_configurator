@@ -21,12 +21,12 @@
 			<input class="menu-btn" type="checkbox" id="menu-btn" />
 			<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
 			<ul class="menu">
-				<li><a href="#">Media Cloud</a></li>
-				<li><a href="#">Media Products</a></li>
-				<li><a href="#">Services</a></li>
-				<li><a href="#">Digital Delivery</a></li>
-				<li><a href="#">Help Center</a></li>
-				<li><a href="#">About us</a></li>
+				<li onmouseover="Unactive()" onmouseout="Active()"><a href="#">Media Cloud</a></li>
+				<li id="MediaProducts"><a href="#">Media Products</a></li>
+				<li onmouseover="Unactive()" onmouseout="Active()"><a href="#">Services</a></li>
+				<li onmouseover="Unactive()" onmouseout="Active()"><a href="#">Digital Delivery</a></li>
+				<li onmouseover="Unactive()" onmouseout="Active()"><a href="#">Help Center</a></li>
+				<li onmouseover="Unactive()" onmouseout="Active()"><a href="#">About us</a></li>
 			</ul>
 
 		</div>
@@ -44,35 +44,60 @@
 	<div class="subheader">
 		<h3> Physical Media</h3>
 		<ul class="submenu">
-			<li><a href="#">Vinyl</a></li>
-			<li><a href="#">CD</a></li>
-			<li><a href="#">DVD</a></li>
-			<li><a href="#">Blue-Ray</a></li>
-			<li><a href="#">E-book</a></li>
+			<li id="VinylSubheader"><a href="#">Vinyl</a></li>
+			<li onmouseover="UnactiveSubheader()" onmouseout="ActiveSubheader()" ><a href="#">CD</a></li>
+			<li onmouseover="UnactiveSubheader()" onmouseout="ActiveSubheader()"><a href="#">DVD</a></li>
+			<li onmouseover="UnactiveSubheader()" onmouseout="ActiveSubheader()"><a href="#">Blue-Ray</a></li>
+			<li onmouseover="UnactiveSubheader()" onmouseout="ActiveSubheader()"><a href="#">E-book</a></li>
 
 		</ul>
 
 	</div>
+	       
+  <section id="SlideList">
+        <template class="slide_template">
+
+        <div class="mySlides fade">
+
+            <img src="">
+        </div>
+
+    </template>
+</section>
 	<section class="section_1">
 		<div id="hot_deals_slideshow">
 			<template id="hot_deals">
+			<div class="mySlides fade">
 			<div class="hot_deals_grid">
-				<img class=img src="images/landing_page_1.png">
+				<img class="img" src="">
 
 			<div class="desc">
 				<h5>Hot deals</h5>
+				<div class="Highlight">
+<div>
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+	<p> Highlight</p>
+		</div>
+			
 				<h1 class="header_slideshow"></h1>
 				<p class="paragraph"> Paragraph</p>
-			</div>
+			
 				</div>
+						<div id="button_2_col" class="button_2_col">
+			<button id="price" class="price"> </button>
+			<button onmouseover="ButtonEffect()" onmouseout="ButtonEffectOut()" id="buy" class="buy"> BUY </button>
+			</div>
+			
+				</div>
+					
+		</div>
 				</template>
-
 		</div>
 
-		<div id="button_2_col" class="button_2_col">
-			<button id="price" class="price"> 5.500 DKK</button>
-			<button id="buy" class="buy"> BUY </button>
-		</div>
+	
 		<div class="usp">
 			<div class="usp_1">
 				<img src="images/usp1.png" alt="usp">
@@ -111,17 +136,7 @@ dreamed about!.</h3>
 		</div>
 
 	</section>
-	<section id="SlideList">
-		<template class="slide_template">
 
-        <div class="mySlides fade">
-
-            <img src="">
-        
-        </div>
-
-    </template>
-	</section>
 	<footer class="footer">
 		<div class="logo_footer">
 		</div>
@@ -162,6 +177,7 @@ dreamed about!.</h3>
 	</footer>
 
 	<script src="script/script.js"></script>
+
 </body>
 
 </html>

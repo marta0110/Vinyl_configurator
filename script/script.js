@@ -1,6 +1,44 @@
+"Let's encrypt"
+"use strict"
+/* hover effects on previous elements in DOM */
+function Unactive() {
+document.getElementById("MediaProducts").style.borderBottom = "none";
+}
+function Active() {
+ document.getElementById("MediaProducts").style.fontWeight = "600";
+document.getElementById("MediaProducts").style.borderBottom = "4px solid #EB5D1B";
+
+}
+function UnactiveSubheader() {
+ document.getElementById("VinylSubheader").style.fontWeight = "400";
+
+}
+function ActiveSubheader() {
+ document.getElementById("VinylSubheader").style.fontWeight = "600";
+
+}
+function ButtonEffect() {
+ document.getElementById("price").style.color = "#000";
+document.getElementById("price").style.backgroundPosition ="right bottom"
+document.getElementById("price").style.backgroundcolor ="#fff"
+document.getElementById("price").style.border = "1px solid #000";
+}
+
+function ButtonEffectOut() {
+ document.getElementById("price").style.color = "#fff";
+document.getElementById("price").style.backgroundPosition ="left bottom"
+document.getElementById("price").style.backgroundcolor ="#000"
+document.getElementById("price").style.border = "none";
+}
+
+
+/* FETCH DATA FROM	 WP */
+
 let aboutTemplate = document.querySelector("#hot_deals").content;
 let aboutList = document.querySelector("#hot_deals_slideshow");
 let  aboutPage = 1;
+let  lookingForData = !1;
+let slideIndex = 0;
 
 
 function fetchAbout() {
@@ -13,24 +51,63 @@ function fetchAbout() {
 }
 function showAbout(a) {
     console.log(a), lookingForData = !1, a.forEach(showData)
+	showSlides(slideIndex)
+	setInterval(function(){
+		showSlides(slideIndex);
+		slideIndex++;
+		console.log(slideIndex);
+	}, 4000);
+	// setTimeout(showSlides(slideIndex), 300)
 }
 
 function showData(a) {
+	//console.log(a.acf.image.url)
    var b = aboutTemplate.cloneNode(!0);
-    b.querySelector(".header_slideshow").textContent = a.title.rendered,
-	b.querySelector(".paragraph").textContent = a.content.rendered,
-
-									  
+    b.querySelector(".header_slideshow").textContent = a.title.rendered;
+	b.querySelector(".paragraph").textContent = a.content.rendered;
+	b.querySelector("#price").textContent = a.acf.vinyl_hot_deals;
+	// b.querySelecotr().style.backgroundImage = url();
+	b.querySelector(".img").setAttribute("src", a.acf.image.url);
+	//b.querySelector(".img").setAttribute("src", a._embedded["wp:featuredmedia"][0].media_details.sizes.large.source_url)
+						  
 	aboutList.appendChild(b)
+}
+
+fetchAbout();
+
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+	slides.length == dots.length;
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+	  console.log(dots[i]);
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+	
 }
 
 
 
-fetchAbout()
-
-function fetchSlideShow(){
+/*function fetchSlideShow(){
  
- let endpoint = "http://loreleiheckmann.com/wordpress/wordpress/wp-json/wp/v2/Vinyls?_embed";
+ let endpoint = "http://loreleiheckmann.com/wordpress/wordpress/wp-json/wp/v2/Vinyls?per_page=20&_embed=wp:featuredmedia";
  fetch(endpoint)
       .then(e => e.json())
       .then(showSlideShow);
@@ -46,29 +123,38 @@ function showSingleSlide(aSlide) {
     let template = document.querySelector(".slide_template").content;
     let clone = template.cloneNode(true);
     console.log(aSlide);  
-    clone.querySelector("img").setAttribute("src", aSlide._embedded["wp:featuredmedia"][0].media_details.source_url);
-	console.log ("alal")
+    //clone.querySelector("img").setAttribute("src", aSlide._embedded["wp:featuredmedia"][0].media_details.source_url);
+	console.log ("checked")
  
     
     let SlideList = document.querySelector("#SlideList");
     SlideList.appendChild(clone);
  }
 
-fetchSlideShow();
 
-var slideIndex = 0;
+*/
 
-function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    console.log(slides)
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; 
-    }
-    slideIndex++;
-    console.log(slideIndex)
-    if (slideIndex >= slides.length) {slideIndex = 0} 
-    console.log(slideIndex, slides.length)
-    slides[slideIndex].style.display = "block"; 
-    setTimeout(showSlides, 5000); // Change image every 2 seconds
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

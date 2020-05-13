@@ -6,9 +6,7 @@ body {
 
 /*
 
-to do
-
-MENU HIGHLIGHT / BUTTONS -  gap between, how to influence eachother / IMAGE FEATURED  / slideshow counter parallax*/
+to do 1. slideshow counter 2. parallax*/
 
 /* header */
 
@@ -38,19 +36,17 @@ MENU HIGHLIGHT / BUTTONS -  gap between, how to influence eachother / IMAGE FEAT
 
 .header li a:hover,
 .header .menu-btn:hover {
-	border-bottom: 3px solid #EB5D1B;
-	font-weight: 600;
+	border-bottom: 4px solid #EB5D1B;
 	z-index: 5 !important;
 
 }
 
-.header li:hover + .header li a:nth-child(2) {
-	font-weight: 400;
-}
+
 
 .header li:nth-child(2) {
 	font-weight: 600;
-	border-bottom: 3px solid #EB5D1B;
+	border-bottom: 4px solid #EB5D1B;
+	z-index: 5 !important;
 }
 
 /* menu */
@@ -153,6 +149,55 @@ MENU HIGHLIGHT / BUTTONS -  gap between, how to influence eachother / IMAGE FEAT
 }
 
 /* landing page vinyl hot deals slideshow */
+
+/* The dots/bullets/indicators */
+
+.Highlight {
+	display: grid;
+	grid-template-columns: 23% 80%;
+	font-family: "Poppins", sans-serif;
+	font-size: 0.7em;
+}
+#hot_deals_slideshow {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+.dot {
+    cursor: pointer;
+    height: 8px;
+    width: 28px;
+    margin: 0px 1px;
+    background-color: #E6E6E6;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+	    text-align: left;
+
+}
+
+.active, .dot:hover {
+  background-color: #000;
+	
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
 
 #hot_deals_slideshow {
 	padding-top: 50px;
@@ -292,7 +337,6 @@ MENU HIGHLIGHT / BUTTONS -  gap between, how to influence eachother / IMAGE FEAT
 	color: #000;
 
 }
-#buy:hover ~ #price,
 .button_2_col .buy:hover {
 	color: #fff !important;
 	cursor: pointer;
@@ -816,10 +860,14 @@ footer .social_media .linkedin:hover {
 		font-family: "Roboto", sans-serif;
 		font-size: 1.1em;
 		margin-block-start: 0;
+		margin-block-end: 0;
 	}
 	.button_2_col {
 		width: 30%;
 		margin: 0 auto;
+		order: 3;
+		
+		
 
 	}
 	.usp {
@@ -971,9 +1019,9 @@ footer .social_media .linkedin:hover {
 	}
 	.subheader .submenu li:hover {
 		font-weight: 600;
-	}
-	.subheader .submenu li:hover ~ .subheader .submenu li a:nth-child(1) {
-		font-weight: 400;
+		border-bottom: 3px solid #EB5D1B;
+		padding: 13px 0;
+		
 	}
 
 
@@ -988,7 +1036,7 @@ footer .social_media .linkedin:hover {
 	}
 
 	.hot_deals_grid {
-		height:60vh;
+		height:70vh;
 	}
 #hot_deals_slideshow .hot_deals_grid .desc {
     order: 1;
@@ -1063,12 +1111,18 @@ footer .social_media .linkedin:hover {
 	.header {
 		padding-left: 5vw;
 	}
+	.header li a {
+    padding: 8px 20px 18px;
+	}
 	button {
 		font-size: 0.85rem;
 		height: 5vh;
 
 	}
 	/*section 1 */
+	.hot_deals_slideshow{
+		height: 60vh;
+	}
 	.section_1 .color {
 		margin-top: 30px;
 	}
