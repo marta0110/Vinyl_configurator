@@ -56,7 +56,7 @@ function showAbout(a) {
 		showSlides(slideIndex);
 		slideIndex++;
 		console.log(slideIndex);
-	}, 4000);
+	}, 5000);
 	// setTimeout(showSlides(slideIndex), 300)
 }
 

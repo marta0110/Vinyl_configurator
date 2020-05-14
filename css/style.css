@@ -154,9 +154,11 @@ to do 1. slideshow counter 2. parallax*/
 
 .Highlight {
 	display: grid;
-	grid-template-columns: 23% 80%;
+	grid-template-columns: 30% 65%;
 	font-family: "Poppins", sans-serif;
 	font-size: 0.7em;
+	width: 100%;
+
 }
 #hot_deals_slideshow {
   max-width: 100%;
@@ -657,8 +659,11 @@ footer .social_media .linkedin:hover {
 }
 
 
-
-
+@media (max-width: 360px){
+	.Highlight {
+	grid-template-columns: 35% 65%;
+}
+}
 /* 48em = 768px */
 
 @media (min-width: 768px) {
@@ -679,6 +684,9 @@ footer .social_media .linkedin:hover {
 		margin-left: 30%;
 		margin-right: 30%;
 	}
+		.Highlight {
+	grid-template-columns: 15% 85%;
+}
 	.usp .usp_4 p,
 	.usp .usp_3 p,
 	.usp .usp_2 p,
@@ -806,7 +814,9 @@ footer .social_media .linkedin:hover {
 		border-right: none;
 		padding: 8px 20px 20px;
 	}
-
+		.Highlight {
+	grid-template-columns: 25% 75%;
+}
 	.header li {
 		float: left;
 	}
@@ -834,7 +844,8 @@ footer .social_media .linkedin:hover {
 	}
 
 	#hot_deals_slideshow {
-		grid-template-columns: 1fr;
+	grid-template-columns: 1fr;
+    padding-top: 100px;
 	}
 	.hot_deals_grid {
 		order: 1;
@@ -861,11 +872,13 @@ footer .social_media .linkedin:hover {
 		font-size: 1.1em;
 		margin-block-start: 0;
 		margin-block-end: 0;
+		    width: 90%;
 	}
 	.button_2_col {
 		width: 30%;
 		margin: 0 auto;
 		order: 3;
+		grid-column: 1/span 2
 		
 		
 
@@ -1041,6 +1054,10 @@ footer .social_media .linkedin:hover {
 #hot_deals_slideshow .hot_deals_grid .desc {
     order: 1;
     align-self: center;
+
+	}
+	#hot_deals_slideshow .hot_deals_grid img{
+	max-height: 420px;
 	}
 	#hot_deals_slideshow p {
 		width: 80%;
@@ -1122,7 +1139,9 @@ footer .social_media .linkedin:hover {
 	/*section 1 */
 	.hot_deals_slideshow{
 		height: 60vh;
+		padding-top: 150px;
 	}
+
 	.section_1 .color {
 		margin-top: 30px;
 	}
