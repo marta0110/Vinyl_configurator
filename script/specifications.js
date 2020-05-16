@@ -106,33 +106,64 @@ function closeAllSelect(elmnt) {
   }
 }
 function addline(){
-	let element =document.querySelector(".custom-select")
+	let element =document.querySelector(".custom-select-amount")
+	let elementFinish =document.querySelector(".custom-select-finish")
 	let price =document.querySelector(".additional_inf_price")
+	let text = document.querySelector(".text")
 	let PriceChange =document.querySelector(".var_price")
+	let PriceChangeFinish =document.querySelector(".var_price_finish")
 	let value2 =document.querySelector(".value2")
 	let MyList = document.getElementById("mySelect").value;
+	let MyFinish = document.getElementById("myFinish").value;
 	let totalPrice = document.querySelector(".total_price");
 	
-	element.classList.add("line");
+	
+	//elementFinish.style.borderBottom = "4px solid #000";
+	element.style.borderBottom = "4px solid #000";
 	price.style.paddingBottom = "20px";
+	text.style.paddingBottom = "3px";
+	console.log(element)
 	
 	console.log(MyList)
     console.log(PriceChange);
    if (MyList== 2){
-		 PriceChange.innerHTML = "1500dkk" 
-	   totalPrice.innerHTML = "17.000 dkk"
+		 PriceChange.innerHTML = "250dkk" 
+	   totalPrice.innerHTML = "17.000"
 		  
    } else if (MyList== 3){
-		 PriceChange.innerHTML = "300dkk"  
+		 PriceChange.innerHTML = "350dkk"  
 	      totalPrice.innerHTML = "20.000 dkk"
 		  
    }else if (MyList== 4){
+		 PriceChange.innerHTML = "420dkk"  
+	        totalPrice.innerHTML = "20.500 dkk"
+		  
+   } else if (MyList== 5){
 		 PriceChange.innerHTML = "500dkk"  
 	        totalPrice.innerHTML = "20.500 dkk"
 		  
    } else {
 	    PriceChange.innerHTML = "0 dkk" 
    }
+	
+	console.log(MyFinish)
+    console.log(PriceChangeFinish);
+if (MyFinish== 1){
+	  PriceChangeFinish.innerHTML = "1500dkk" 
+	   totalPrice.innerHTML = "17.000 dkk"
+		  
+   } else if (MyFinish== 2){
+		 PriceChangeFinish.innerHTML = "300dkk"  
+	      totalPrice.innerHTML = "20.000 dkk"
+		  
+   }else if (MyFinish== 3){
+		PriceChangeFinish.innerHTML = "500dkk"  
+	        totalPrice.innerHTML = "20.500 dkk"
+		  
+   } else {
+	   PriceChangeFinish.innerHTML = "0 dkk" 
+   }
+
 
 	
 }
@@ -144,4 +175,27 @@ then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
 document.addEventListener("click", addline);
 
+
+
+var socialFloat = document.querySelector('.summary');
+var footer = document.querySelector('.footer');
+
+function checkOffset() {
+  function getRectTop(el){
+    var rect = el.getBoundingClientRect();
+    return rect.top;
+  }
+  
+  if((getRectTop(socialFloat) + document.body.scrollTop) + socialFloat.offsetHeight >= (getRectTop(footer) + document.body.scrollTop) - 10)
+    socialFloat.style.position = 'absolute';
+  if(document.body.scrollTop + window.innerHeight < (getRectTop(footer) + document.body.scrollTop))
+    socialFloat.style.position = 'fixed'; // restore when you scroll up
+	
+	
+
+}
+
+document.addEventListener("scroll", function(){
+  checkOffset();
+});
 

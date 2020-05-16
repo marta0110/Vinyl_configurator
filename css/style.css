@@ -7,7 +7,7 @@ body {
 /*
 
 to do 1. slideshow counter 2. parallax 3. slideshow fetch time
-4. rendered specifications from hot deals 5. change of amount - not fixed but dynamic*/
+4. rendered specifications from hot deals 5. change of amount - not fixed but dynamic +barcodes and border bottom 6. fixed summary not jumping*/
 
 /* header */
 
@@ -536,7 +536,7 @@ footer .menu_footer li a {
 footer .contact_us_footer {
 	text-align: center;
 }
-
+.additional_information .confirm_button,
 footer .contact_us_footer .contact_us_button_footer {
 	border-top-left-radius: 11px;
 	-moz-border-radius-topleft: 11px;
@@ -548,7 +548,7 @@ footer .contact_us_footer .contact_us_button_footer {
 	border: none;
 	width: 100px;
 	margin-bottom: 20px;
-	width: 30%;
+	width: 29%;
 	height: 40px;
 	font-size: 1em;
 	font-family: "Poppins", sans-serif;
@@ -561,9 +561,10 @@ footer .contact_us_footer .contact_us_button_footer {
     transition:all 1.5s ease;
 	z-index: 6;
 	border: 1px solid #EB5D1B;
+	cursor: pointer;
 }
 
-
+.additional_information .confirm_button:hover,
 footer .contact_us_footer .contact_us_button_footer:hover {
 	background-color: #000;
 	color: white;
@@ -667,12 +668,6 @@ footer .social_media .linkedin:hover {
 	background-position:left bottom;
 }
 
-/* HOT_DEALS LANDING PAGE */
-
-.summary{
-	width: 100%;
-	margin: 0 auto;
-}
 .summary .process_line_1{
 	width: 100%;
 	border-bottom: 10px solid #707070;
@@ -754,7 +749,7 @@ hr{
 }
 .additional_information{
 	background-color: #D3DBDA;
-	padding: 20px;
+	padding: 5px;
 }
 .additional_information .custom-select{
 	position: relative;
@@ -769,27 +764,32 @@ hr{
 .additional_information  .select-selected:after {
   position: absolute;
   content: "";
-    top: 40px;
-    right: 19px;
   width: 0;
   height: 0;
   border: 6px solid transparent;
   border-color: #000 transparent transparent transparent;
+	top: 46px;
+    right: 8px;
 }
 
 /*point the arrow upwards when the select box is open (active):*/
 .additional_information  .select-selected.select-arrow-active:after {
   border-color: transparent transparent #000 transparent;
-  top: 34px;
+  top: 38px;
 }
 
 /*style the items (options), including the selected item:*/
 .additional_information  .select-items div,.select-selected {
   color: #000;
-  padding: 8px 16px;
   border: 1px solid transparent;
   cursor: pointer;
   user-select: none;
+    font-size: 0.9em;
+	    margin-left: -15px;
+	padding-bottom: 10px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /*style items (options):*/
@@ -799,7 +799,8 @@ hr{
   top: 100%;
   left: 0;
   right: 0;
-  z-index: 99;
+	z-index: 5;
+
 }
 
 /*hide the items when the select box is closed:*/
@@ -811,25 +812,37 @@ hr{
 .additional_information  .select-items div:hover, .same-as-selected {
   background-color: #D3DBDA;
 }
+
+.additional_information .music_online{
+	display: grid;
+	grid-template-columns: 25% 75%;
+	padding-bottom: 10px;
+}
+
+.additional_information .music_online .text{
+	border-right: 1px solid #000;
+}
+.additional_information .weight,
+.additional_information .barcode,
 .additional_information .sticker,
 .additional_information .additional_inf_amount{
 	display: grid;
-	grid-template-columns: 22% 55% 22%;
+	grid-template-columns: 25% 50% 25%;
 	padding-bottom: 10px;
 }
-.additional_information .sticker .checkbox,
-.additional_information .additional_inf_amount .custom-select{
+.additional_information .checkbox,
+.additional_information .custom-select{
 	border: 1px solid #000;
-	padding-top: 23px;
-	padding-bottom: 24px;
+	height: 105px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.line{
-		border-bottom: 4px solid #000 !important;
-}
+
 .additional_information .sticker .checkbox:hover,
 .additional_information .additional_inf_amount .custom-select:hover{
-		border: 1px solid #EB5D1B !important;
+		border: 1px solid #EB5D1B;
 }
 
 
@@ -838,6 +851,7 @@ hr{
 	border-top: 1px solid #000;
 	border-bottom: 1px solid #000;
 	padding: 0 10px;
+	height: 105px;
 }
 .additional_information .text h4{
 		margin-block-start: 0.33em;
@@ -850,18 +864,17 @@ margin-block-start: 0em;
 }
 .additional_information .additional_inf_price{
 	border: 1px solid black;
-	align-self:center;
-		padding-top: 18px;
-	padding-bottom: 17px;
+	align-items: center;
+  justify-content: center;
+	display: flex;
+	  
 }
 .additional_information .additional_inf_price p{
 	text-align: center;
 	font-weight: 700;
 }
 .additional_information .checkbox{
-	align-self: center;
-    justify-self: center;
-	padding: 32px 38px !important;
+	padding: 0px 16px;
 }
 /* The container */
 .container {
@@ -899,7 +912,7 @@ margin-block-start: 0em;
 
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
-  background-color: #ccc;
+  background-color: #fff;
 }
 
 /* When the checkbox is checked, add a blue background */
@@ -932,6 +945,39 @@ margin-block-start: 0em;
   transform: rotate(45deg);
 }
 
+.additional_form label{
+	font-family: "Poppins", sans-serif;
+	font-weight: 700;
+	
+}
+.additional_form input[type=text], select {
+width: 100%;
+    padding: 12px 20px 70px 10px;
+    display: inline-block;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    margin: 8px 0 40px 0;
+    font-size: 0.9em;
+}
+
+.additional_form input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.additional_form input[type=submit]:hover {
+  background-color: #45a049;
+}
+.additional_information .confirm_button{
+	margin-left: 65%;
+}
 
 @media (max-width: 360px){
 	.Highlight {
@@ -1037,8 +1083,36 @@ margin-block-start: 0em;
 	footer .social_media .linkedin:hover {
 		width: 38px;
 	}
+	
+/* HOT_DEALS LANDING PAGE */
+/*.additional_inf_lp{
+	display: grid;
+	grid-template-columns: 1fr;
+}
 
+.summary{
+	width: 100%;
+	margin: 0 auto;
+	order:2;
+}
+.additional_information{
+	order: 1;
+}
+*/
 
+.additional_information{
+	padding: 20px;
+}
+.additional_information .select-selected:after {
+    right: 40px
+}
+	.additional_information .select-items div {
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+}
+.additional_information .select-items div, .select-selected {
+    font-size: 1em;
 }
 
 @media (min-width: 1024px) {
@@ -1046,6 +1120,14 @@ margin-block-start: 0em;
 	.header {
 		grid-template-columns: 3vw 65vw 10vw 9vw 5vw 6vw;
 		padding: 20px 20px 0px 20px;
+		position: fixed;
+    width: 100vw;
+		height: 51px;
+    background-color: white;
+	}
+	.relative-header{
+		position: absolute;
+		    top: 0;
 	}
 	.subheader {
 		z-index: 3 !important;
@@ -1231,16 +1313,13 @@ margin-block-start: 0em;
 	
 /* HOT_DEALS LANDING PAGE */
 
-.summary{
-	width: 30%;
-	margin-left: 0;
-	
-}
+
 
 .summary .summary_header{
 	grid-template-columns: 15% 75%;
 	grid-column-gap: 0;
 	padding-left: 10px;
+	    padding-top: 20px;
 }
 .summary .summary_header img{
 	width:55%;
@@ -1263,7 +1342,34 @@ margin-block-start: 0em;
 .summary .total .total_price{
     font-size: 1.2em;
 }
+/* HOT_DEALS LANDING PAGE */
+.additional_inf_lp{
+	    margin-top: 70px;
+	    position: relative;
+}
+	.additional_inf_lp .summary{
+		background-color: #fff;
+	}
+	.summary .specifications .spec_grid p{
+		margin-block-start: 0.8em;
+    margin-block-end: 0.8em;
+	}
+.additional_inf_lp .summary {
+	    left: 0px;
+    position: fixed;
+    z-index: 1;
+    width: 28%;
+    order: 1;
+	}
 
+.additional_inf_lp .additional_information{
+    height: auto;
+    width: 70%;
+    margin-left: 28%
+	}
+	.additional_information .select-selected:after {
+    right: 30px;
+}
 }
 
 
@@ -1316,7 +1422,8 @@ margin-block-start: 0em;
 		display: grid;
 		grid-template-columns: 20vw 80vw;
 		z-index: 4;
-		position: absolute;
+		    position: fixed;
+		top: 69px;
 
 	}
 	.subheader h3 {
@@ -1374,10 +1481,15 @@ margin-block-start: 0em;
 	#hot_deals_slideshow p {
 		width: 80%;
 	}
+	.additional_inf_lp .additional_information {
+    height: auto;
+    margin-top: 9%;
+	}
 	.button_2_col .buy {
 		z-index: 2;
 
 	}
+	
 	/* parallax */
 
 	.needle {
@@ -1433,7 +1545,11 @@ margin-block-start: 0em;
 
     margin-top: 50px;
 }
-
+	.additional_inf_lp .summary {
+		top:70px;
+	}
+	
+	}
 @media (min-width: 1400px) {
 	.header {
 		grid-template-columns: 8vw 60vw 10vw 5vw 5vw 5vw;
@@ -1518,5 +1634,28 @@ margin-block-start: 0em;
 		margin-block-start: 0.7em;
     margin-block-end: 0.7em;
 	}
-
+	.summary {
+		height: 100vh - 180px;
+	}
+	.summary_header{
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	.additional_information {
+    padding: 50px;
+}
+		.additional_inf_lp .additional_information {
+    height: auto;
+    margin-top: 7%;
+	}
+	.additional_inf_lp .summary {
+    top: 69px;
+}
+	.additional_inf_lp .additional_information {
+    width: 65%;
+}
+	.summary .specifications .spec_grid p {
+    margin-block-start: 0.6em;
+    margin-block-end: 0.6em;
+}
 }

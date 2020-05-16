@@ -16,7 +16,9 @@
 </head>
 
 <body>
-<header class="header">
+<div class="relative-header">
+	<header class="header">
+	
 		<div class="hamburger">
 			<input class="menu-btn" type="checkbox" id="menu-btn" />
 			<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
@@ -40,12 +42,14 @@
 			<img src="images/mail.png" alt="mail">
 		</div>
 		<p> EN &#8964;</p>
+	
 	</header>
+	</div>
 	<div class="subheader">
 		<h3> Physical Media</h3>
 		<ul class="submenu">
 			<li id="VinylSubheader"><a href="#">Vinyl</a></li>
-			<li onmouseover="UnactiveSubheader()" onmouseout="ActiveSubheader()" ><a href="#">CD</a></li>
+			<li onmouseover="UnactiveSubheader()" onmouseout="ActiveSubheader()"><a href="#">CD</a></li>
 			<li onmouseover="UnactiveSubheader()" onmouseout="ActiveSubheader()"><a href="#">DVD</a></li>
 			<li onmouseover="UnactiveSubheader()" onmouseout="ActiveSubheader()"><a href="#">Blue-Ray</a></li>
 			<li onmouseover="UnactiveSubheader()" onmouseout="ActiveSubheader()"><a href="#">E-book</a></li>
@@ -53,162 +57,238 @@
 		</ul>
 
 	</div>
-       
-			
-	       <div class="summary">
-	       
-	       	<div class="process_line_1">
-	       		
-	       	</div>
-	       	<div class="process_line_2">
-	       		
-	       	</div>
-	       	<div class="summary_header">
-	       		<img src="images/summary-icon.png" alt="summary">
-	       	<h4> Summary</h4>
-	       	</div>
-   
-	       	 	<div class="package_deals">
-	       	 	<template id="summary_template">
+
+<div class="additional_inf_lp">
+	<div class="summary">
+
+		<div class="process_line_1">
+
+		</div>
+		<div class="process_line_2">
+
+		</div>
+		<div class="summary_header">
+			<img src="images/summary-icon.png" alt="summary">
+			<h4> Summary</h4>
+		</div>
+
+		<div class="package_deals">
+			<template id="summary_template">
 					<h6> Package deals</h6>
        		<div class="pack_deals">
 	       		<p class="amount"></p>
 	       		<p class="package_price"></p>
        		  </div>
 	       		  </template>
-	       	</div>
-	       	   	 	<div class="specifications">
-	       	   	 
-	       	   	 	<h6> Specifications</h6>
-	       	   	 	<div class ="spec_grid">
-	       		<p class="specification_header">Quantity per item</p>
-	       		<p class="specification_p"> 1</p>
-       			  <p class="specification_header"> Test press</p>
-	       		<p class="specification_p"> 5</p>
-       			   <p class="specification_header"> Spine</p>
-	       		<p class="specification_p"> 3 mm </p>
-       			    <p class="specification_header"> RPM</p>
-	       		<p class="specification_p"> 33 </p>
-       			    <p class="specification_header"> Inner sleeve</p>
-	       		<p class="specification_p">White paper </p>
-       			    <p class="specification_header"> Outer sleeve</p>
-	       		<p class="specification_p"> Full color </p>
-       			  <p class="specification_header"> Label color</p>
-	       		<p class="specification_p"> Full color </p>
-       			    <p class="specification_header"> Cover finish</p>
-	       		<p class="specification_p"> Gloss UV </p>
-	       		</div>
-	       	</div>
-	       	  	   	 	<div class="Packaging_and_extras">
-	       	  	   	 		<h6> Packaging and extras</h6>
-	       	  	   	 		 	<div class ="extras_grid">
-	       		<p class="codes"> Downloads codes</p>
-	       		<p class="package_price"> 750 dkk</p>
-	       	</div>
-	       	<hr>
-	       	<div class="total">
-	       	<div class="total_desc">
-	       		<h3> TOTAL</h3>
-	       		<p>(including tax)</p>
-	       		</div>
-	       		<h2 class="total_price"> 15.650 dkk</h2>
-	       	</div>
-	       	
-			   </div>
-			 
-	       </div>
-	        <div class='additional_information'>
-	        <h3> Additional information</h3>
-	        <p> Please fill additional information about your order</p>
-	        <div class="additional_inf_amount">
-	        <div class="custom-select">
-  <select id="mySelect">
+		</div>
+		<div class="specifications">
+
+			<h6> Specifications</h6>
+			<div class="spec_grid">
+				<p class="specification_header">Quantity per item</p>
+				<p class="specification_p"> 1</p>
+				<p class="specification_header"> Test press</p>
+				<p class="specification_p"> 5</p>
+				<p class="specification_header"> Spine</p>
+				<p class="specification_p"> 3 mm </p>
+				<p class="specification_header"> RPM</p>
+				<p class="specification_p"> 33 </p>
+				<p class="specification_header"> Inner sleeve</p>
+				<p class="specification_p">White paper </p>
+				<p class="specification_header"> Outer sleeve</p>
+				<p class="specification_p"> Full color </p>
+				<p class="specification_header"> Label color</p>
+				<p class="specification_p"> Full color </p>
+				<p class="specification_header"> Cover finish</p>
+				<p class="specification_p"> Gloss UV </p>
+			</div>
+		</div>
+		<div class="Packaging_and_extras">
+			<h6> Packaging and extras</h6>
+			<div class="extras_grid">
+				<p class="codes"> Downloads codes</p>
+				<p class="package_price"> 750 dkk</p>
+			</div>
+			<hr>
+			<div class="total">
+				<div class="total_desc">
+					<h3> TOTAL</h3>
+					<p>(including tax)</p>
+				</div>
+				<h2 class="total_price"> 15.650 dkk</h2>
+			</div>
+
+		</div>
+
+	</div>
+	<div class='additional_information'>
+		<h3> Additional information</h3>
+		<p> Would you like to add something extra to your order?</p>
+	
+		<div class="additional_inf_amount">
+			<div class="custom-select custom-select-amount">
+				<select id="mySelect">
     <option value="0"> choose</option>
      <option value="1">250</option>
     <option class="value2" value="2">500</option>
     <option value="3">1000</option>
      <option value="4">1500</option>
 				</select>
-	        </div>
-	        <div class="text">
-	        	<h4>Amount</h4>
-	        	<p> Choose how many vinyls you would like to release. </p>
-	        </div>
-	        <div class="additional_inf_price">
-	        <p class="var_price"> 0 dkk</p>	
-	        
-	        </div>
-	       	
-	       </div>
-	       
-	       <div class="sticker">
-	     <div class="checkbox">
-	     <label class="container">
+			</div>
+			<div class="text">
+				<h4>Amount</h4>
+				<p> Choose how many vinyls you would like to release. </p>
+			</div>
+			<div class="additional_inf_price">
+				<p class="var_price"> 0 dkk</p>
+
+			</div>
+
+		</div>
+
+		<div class="sticker">
+			<div class="checkbox">
+				<label class="container">
   <input type="checkbox">
   <span class="checkmark"></span>
 			 </label>
-			   </div>
-      
-         <div class="text">
-	        	<h4>Sticker</h4>
-	        	<p> I would like to add a 4 color, round up to 9000 m2 sticker. </p>
-	        </div>
-	          <div class="additional_inf_price">
-	        <p> 350 dkk</p>	
-	        
-	        </div>
-	         </div>
-	       
-	       	<footer class="footer">
-		<div class="logo_footer">
-		</div>
-		<ul class="menu_footer">
-			<li><a href="#">Media Cloud</a></li> <span class="chevron right"></span>
-			<li><a href="#">Media Products</a></li><span class="chevron right"></span>
-			<li><a href="#">Services</a></li><span class="chevron right"></span>
-			<li><a href="#">Digital Delivery</a></li><span class="chevron right"></span>
-			<li><a href="#">Help Center</a></li><span class="chevron right"></span>
-			<li><a href="#">About us</a></li><span class="chevron right"></span>
-		</ul>
-		<div class="contact_us_footer">
-			<button class="contact_us_button_footer" type="button">Contact us</button>
-			<div class="phone">
-				<div class="phone_icon"></div>
-				<p>+45 87 45 45 45</p>
 			</div>
-			<div class="mail">
-				<div class="mail_icon"></div>
-				<p>dicentia@dicentia.dk</p>
+
+			<div class="text">
+				<h4>Sticker</h4>
+				<p> I would like to add a 4 color, round up to 9000 m2 sticker. </p>
+			</div>
+			<div class="additional_inf_price">
+				<p> 350 dkk</p>
+
 			</div>
 		</div>
-
-		<div class="social_media">
-			<div class="fb">
+		<div class="additional_inf_amount">
+			<div class="custom-select custom-select-finish">
+				<select id="myFinish">
+    <option value="0"> choose</option>
+     <option value="1">Glossy UV</option>
+    <option value="2">Extra UV</option>
+    <option value="3">Matt Finish</option>
+     <option value="4">Reverse</option>
+				</select>
 			</div>
-			<div class="linkedin">
+			<div class="text">
+				<h4>Finish</h4>
+				<p> Choose one of the avaible finish for you cover. </p>
+			</div>
+			<div class="additional_inf_price">
+				<p class="var_price_finish"> 0 dkk</p>
+
+			</div>
+
+		</div>
+		<div class="barcode">
+			<div class="checkbox">
+				<label class="container">
+  <input type="checkbox">
+  <span class="checkmark"></span>
+			 </label>
+			</div>
+
+			<div class="text">
+				<h4>Barcode</h4>
+				<p> I would like to add a barcode to my Vinyl. </p>
+			</div>
+			<div class="additional_inf_price">
+				<p> 255 dkk</p>
+
 			</div>
 		</div>
-		<div class="adress">
-			<p>Dicentia Studios A/S | Carl Jacobsens Vej 16, opg. 4, 3. Floor | DK-2500 Valby | Denmark | CVR: DK 31 75 31 04 </p>
+		<div class="weight">
+			<div class="checkbox">
+				<label class="container">
+  <input type="checkbox">
+  <span class="checkmark"></span>
+			 </label>
+			</div>
 
+			<div class="text">
+				<h4>Weight</h4>
+				<p> Upgrade weight of your vinyl up to 180 grams. </p>
+			</div>
+			<div class="additional_inf_price">
+				<p> 200 dkk</p>
+
+			</div>
 		</div>
-		<div class="privacy_policy">
-			<p> Copyright © 2020 Dicentia Studios Inc. All rights reserved. | Privacy policy | Use of cookies | Terms of use </p>
+		<div class="music_online">
+			<div class="checkbox">
+				<label class="container">
+  <input type="checkbox">
+  <span class="checkmark"></span>
+			 </label>
+			</div>
+			<div class="text">
+				<h4> Sell your music trough on-line streaming services</h4>
+				<p> Great! I definitely would like to hear more about this solution. </p>
+			</div>
 		</div>
-
-	</footer>
-
 	
-	<script src="script/hot_deals.js"></script>
+		<div class="additional_form">
+  <form action="/action_page.php">
+    <label for="special_request">Do you want something special for your vinyl?</label>
+    <input type="text" id="special_request" name="special_request" placeholder="Let us know what can we do for you.">
+			</form>
+		</div>
+		<button class="confirm_button" type="button"> Confirm</button>
+		</div>
+		</div>
+		<footer class="footer">
+			<div class="logo_footer">
+			</div>
+			<ul class="menu_footer">
+				<li><a href="#">Media Cloud</a></li> <span class="chevron right"></span>
+				<li><a href="#">Media Products</a></li><span class="chevron right"></span>
+				<li><a href="#">Services</a></li><span class="chevron right"></span>
+				<li><a href="#">Digital Delivery</a></li><span class="chevron right"></span>
+				<li><a href="#">Help Center</a></li><span class="chevron right"></span>
+				<li><a href="#">About us</a></li><span class="chevron right"></span>
+			</ul>
+			<div class="contact_us_footer">
+				<button class="contact_us_button_footer" type="button">Contact us</button>
+				<div class="phone">
+					<div class="phone_icon"></div>
+					<p>+45 87 45 45 45</p>
+				</div>
+				<div class="mail">
+					<div class="mail_icon"></div>
+					<p>dicentia@dicentia.dk</p>
+				</div>
+			</div>
+
+			<div class="social_media">
+				<div class="fb">
+				</div>
+				<div class="linkedin">
+				</div>
+			</div>
+			<div class="adress">
+				<p>Dicentia Studios A/S | Carl Jacobsens Vej 16, opg. 4, 3. Floor | DK-2500 Valby | Denmark | CVR: DK 31 75 31 04 </p>
+
+			</div>
+			<div class="privacy_policy">
+				<p> Copyright © 2020 Dicentia Studios Inc. All rights reserved. | Privacy policy | Use of cookies | Terms of use </p>
+			</div>
+
+		</footer>
+
+
+		<script src="script/hot_deals.js"></script>
 		<script src="script/others.js"></script>
-			<script src="script/specifications.js"></script>
+		<script src="script/specifications.js"></script>
 
 
 
 
 
 
-<!--<h4> Thank you for your order</h4>
+		<!--<h4> Thank you for your order</h4>
 <p>We just sent you a confirmation e-mail to adress: adress@gmail.com. 
 <br>
 We hope that our offer is matching your request. If you have any questions please do not hesitate to contact us. 
