@@ -723,7 +723,10 @@ footer .social_media .linkedin:hover {
   border-right: 2px solid #000;
   height: 25px
 }
-
+#total_price{
+margin-block-start: 0;
+    margin-block-end: 0.3em;
+}
 .summary .package_price{
 	align-self: center;
 	justify-self: center;
@@ -978,6 +981,52 @@ width: 100%;
 .additional_information .confirm_button{
 	margin-left: 65%;
 }
+.wrapper_correct,
+.wrapper_required {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+
+}
+.wrapper_correct{
+	width: 0;
+  height: 0;
+	display: none;
+	
+}
+.wrapper_correct input,
+.wrapper_required input {
+  padding-right: 14px;
+}
+
+.wrapper_required:after {
+  content: "*";
+  position: absolute;
+  left: 4px;
+  top: +3px;
+  color: red;
+  z-index: 5;
+}
+
+ .wrapper_required input:valid {
+           border: 1px solid orange;
+            }
+
+ .wrapper_required input:valid:not(:placeholder-shown)~..wrapper_correct:after{
+    background-image: url(images/correct.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 10px;
+    top: 3px;
+    z-index: 5;
+    content: "";
+    width: 12px;
+    height: 12px;
+}
+
+     
+
 
 @media (max-width: 360px){
 	.Highlight {
@@ -1319,7 +1368,7 @@ width: 100%;
 	grid-template-columns: 15% 75%;
 	grid-column-gap: 0;
 	padding-left: 10px;
-	    padding-top: 20px;
+	    padding-top: 15px;
 }
 .summary .summary_header img{
 	width:55%;
@@ -1358,14 +1407,14 @@ width: 100%;
 	    left: 0px;
     position: fixed;
     z-index: 1;
-    width: 28%;
+    width: 29%;
     order: 1;
 	}
 
 .additional_inf_lp .additional_information{
     height: auto;
-    width: 70%;
-    margin-left: 28%
+    width: 68%;
+    margin-left: 29%
 	}
 	.additional_information .select-selected:after {
     right: 30px;
@@ -1489,7 +1538,9 @@ width: 100%;
 		z-index: 2;
 
 	}
-	
+	.position{
+		position: fixed;
+	}
 	/* parallax */
 
 	.needle {

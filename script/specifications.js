@@ -32,9 +32,16 @@ function showSpecifications(a) {
 
 fetchSpecifications()
 */
+// set the total price amount
 
- 
+// let totalPrice = document.querySelector("#total_price");
+// let FixedPrice = document.getElementById('#total_price').textContent;
+ // console.log(FixedPrice)
+// let showPrice = FixedPrice + " dkk"
+ //totalPrice.innerHTML = showPrice;
 
+
+// dropdown list
 
 var x, i, j, selElmnt, a, b, c;
 /*look for any elements with the class "custom-select":*/
@@ -86,6 +93,7 @@ for (i = 0; i < x.length; i++) {
       this.classList.toggle("select-arrow-active");
     });
 }
+
 function closeAllSelect(elmnt) {
   /*a function that will close all select boxes in the document,
   except the current select box:*/
@@ -105,6 +113,9 @@ function closeAllSelect(elmnt) {
     }
   }
 }
+
+
+// PRICE ACTUALIZATION  + ACTIVE BOXES//
 function addline(){
 	let element =document.querySelector(".custom-select-amount")
 	let elementFinish =document.querySelector(".custom-select-finish")
@@ -115,32 +126,49 @@ function addline(){
 	let value2 =document.querySelector(".value2")
 	let MyList = document.getElementById("mySelect").value;
 	let MyFinish = document.getElementById("myFinish").value;
-	let totalPrice = document.querySelector(".total_price");
+	
 	
 	
 	//elementFinish.style.borderBottom = "4px solid #000";
 	element.style.borderBottom = "4px solid #000";
 	price.style.paddingBottom = "20px";
 	text.style.paddingBottom = "3px";
-	console.log(element)
-	
-	console.log(MyList)
-    console.log(PriceChange);
+
    if (MyList== 2){
-		 PriceChange.innerHTML = "250dkk" 
-	   totalPrice.innerHTML = "17.000"
+	 PriceChange.innerHTML = "250dkk";
+      let newPrice = FixedPrice 
+  
+	   
+	    let totalPrice = document.querySelector("#total_price");
+FixedPrice = "12.550"
+ let showPrice = FixedPrice + " dkk"
+ totalPrice.innerHTML = showPrice;
+  
 		  
    } else if (MyList== 3){
 		 PriceChange.innerHTML = "350dkk"  
-	      totalPrice.innerHTML = "20.000 dkk"
+	   //  let VinylPrice = "0.350"
+	    // let Result = "12.750";
+	   //  let result = (+VinylPrice) + (+Result)
+	
+	 document.getElementById("total_price").innerHTML = "13.100 dkk"; 
+  
 		  
    }else if (MyList== 4){
 		 PriceChange.innerHTML = "420dkk"  
-	        totalPrice.innerHTML = "20.500 dkk"
+	     let VinylPrice = "0.420"
+	     let Result = "12.750";
+	     let result = (+VinylPrice) + (+Result) 
+	   
+	 document.getElementById("total_price").innerHTML = result; 
 		  
    } else if (MyList== 5){
 		 PriceChange.innerHTML = "500dkk"  
-	        totalPrice.innerHTML = "20.500 dkk"
+	     let VinylPrice = "0.500"
+	     let Result = "12.750";
+	     let result = (+VinylPrice) + (+Result) +"00 dkk"
+	   
+	 document.getElementById("total_price").innerHTML = result;
 		  
    } else {
 	    PriceChange.innerHTML = "0 dkk" 
@@ -189,7 +217,7 @@ function checkOffset() {
   if((getRectTop(socialFloat) + document.body.scrollTop) + socialFloat.offsetHeight >= (getRectTop(footer) + document.body.scrollTop) - 10)
     socialFloat.style.position = 'absolute';
   if(document.body.scrollTop + window.innerHeight < (getRectTop(footer) + document.body.scrollTop))
-    socialFloat.style.position = 'fixed'; // restore when you scroll up
+    socialFloat.classList.add ="position" // restore when you scroll up
 	
 	
 
@@ -198,4 +226,5 @@ function checkOffset() {
 document.addEventListener("scroll", function(){
   checkOffset();
 });
+
 
