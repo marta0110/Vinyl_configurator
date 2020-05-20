@@ -186,8 +186,12 @@ p, h5, h6, .select-selected{
 
 }
 
-.active, .dot:hover {
-  background-color: #000;
+.active{
+	 background-color: #000 !important;
+	
+}
+ .dot:hover {
+  background-color: #000 !important;
 	
 }
 
