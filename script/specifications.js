@@ -1,46 +1,4 @@
 
-/*let SpecificationTemplate = document.querySelector("#specifications_template").content;
-let SpecificationList = document.querySelector(".specifications");
-let SpecificationPage = 1;
-let lookingForData = false;
-
-
-function fetchSpecifications() {
-    var a = new URLSearchParams(window.location.search),
-        b = a.get("category"),
-        c = "http://loreleiheckmann.com/wordpress/wordpress/wp-json/wp/v2/specifications?per_page=4" + SpecificationPage;
-    b && (c = "http://loreleiheckmann.com/wordpress/wordpress/wp-json/wp/v2/specifications?per_page=4" + SpecificationPage + "&categories=" + b), fetch(c).then(function(d) {
-        return d.json()
-    }).then(showSpecifications)
-}
-function showSpecifications(a) {
-	a.forEach(showSpecifications);
-	 lookingForData = false;
-}
-
-function showSpecifications(a) {
-   var b = SpecificationTemplate.cloneNode(!0);
-		 console.log(a);
-    b.querySelector(".specification_header").textContent = a.title.rendered;
-	//b.querySelector(".specification_p").textContent = a.content.rendered;
-	
-	
-						  
-	SpecificationList.appendChild(b)
-}
-
-
-fetchSpecifications()
-*/
-// set the total price amount
-
-// let totalPrice = document.querySelector("#total_price");
-// let FixedPrice = document.getElementById('#total_price').textContent;
- // console.log(FixedPrice)
-// let showPrice = FixedPrice + " dkk"
- //totalPrice.innerHTML = showPrice;
-
-
 // dropdown list
 
 var x, i, j, selElmnt, a, b, c;
@@ -226,5 +184,48 @@ function checkOffset() {
 document.addEventListener("scroll", function(){
   checkOffset();
 });
+
+
+
+/*let SpecificationTemplate = document.querySelector("#specifications_template").content;
+let SpecificationList = document.querySelector(".specifications");
+let SpecificationPage = 1;
+let lookingForData = false;
+
+
+function fetchSpecifications() {
+    var a = new URLSearchParams(window.location.search),
+        b = a.get("category"),
+        c = "http://loreleiheckmann.com/wordpress/wordpress/wp-json/wp/v2/specifications?per_page=4" + SpecificationPage;
+    b && (c = "http://loreleiheckmann.com/wordpress/wordpress/wp-json/wp/v2/specifications?per_page=4" + SpecificationPage + "&categories=" + b), fetch(c).then(function(d) {
+        return d.json()
+    }).then(showSpecifications)
+}
+function showSpecifications(a) {
+	a.forEach(showSpecifications);
+	 lookingForData = false;
+}
+
+function showSpecifications(a) {
+   var b = SpecificationTemplate.cloneNode(!0);
+		 console.log(a);
+    b.querySelector(".specification_header").textContent = a.title.rendered;
+	//b.querySelector(".specification_p").textContent = a.content.rendered;
+	
+	
+						  
+	SpecificationList.appendChild(b)
+}
+
+
+fetchSpecifications()
+*/
+// set the total price amount
+
+// let totalPrice = document.querySelector("#total_price");
+// let FixedPrice = document.getElementById('#total_price').textContent;
+ // console.log(FixedPrice)
+// let showPrice = FixedPrice + " dkk"
+ //totalPrice.innerHTML = showPrice;
 
 
