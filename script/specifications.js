@@ -105,7 +105,7 @@ function addline(){
    if (MyList== 2){
 	 PriceChange.innerHTML = "250dkk";
      
-	   let showPrice = FixedPrice + "0.250"
+	   let showPrice = FixedPrice + 250;
 console.log(showPrice);
 totalPrice.innerHTML = showPrice + "dkk";
      
