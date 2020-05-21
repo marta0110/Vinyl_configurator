@@ -1,3 +1,18 @@
+//on click of the submit button show diffrent section
+
+let SubmitButton = document.getElementById("additional_informations_button");
+
+let AdressForm = document.getElementById("adress_form");
+let AdditionalInf = document.querySelector(".additional_information");
+
+
+function GoToAdress(){
+    AdressForm.style.display = "block";
+	  AdditionalInf.style.display="none";
+   
+  }
+
+
 // set the total price amount
 
 let totalPrice = document.querySelector("#total_price");
@@ -129,6 +144,7 @@ function addline() {
 		totalPrice.innerHTML = showPrice.toLocaleString() + " dkk"
 	} else {
 		PriceChange.innerHTML = "0 dkk"
+		totalPrice.innerHTML = ShowPrice.toLocaleString("en") + " dkk"
 	}
 
 	
@@ -137,37 +153,37 @@ function addline() {
 	if (MyFinish == 1) {
 		PriceChangeFinish.innerHTML = "1500dkk"
 		 
-	NewPrice = +showPrice + +1500;
+	let NewPrice = +showPrice + +1500;
    console.log(NewPrice);
 	totalPrice.innerHTML = NewPrice.toLocaleString() + " dkk"
 
 	} else if (MyFinish == 2) {
 		PriceChangeFinish.innerHTML = "3000dkk"
 	
-	NewPrice = +showPrice + +3000;
+	let NewPrice = +showPrice + +3000;
    console.log(NewPrice);
 	totalPrice.innerHTML = NewPrice.toLocaleString() + " dkk"
 
 	} else if (MyFinish == 3) {
 		PriceChangeFinish.innerHTML = "500dkk"
-		totalPrice.innerHTML = "20.500 dkk"
-		
-			
-	NewPrice = +showPrice + +500;
+
+	let NewPrice = +showPrice + +500;
    console.log(NewPrice);
 	totalPrice.innerHTML = NewPrice.toLocaleString() + " dkk"
 
-	} else {
-		PriceChangeFinish.innerHTML = "0 dkk"
-	}
+	} else if (MyFinish == 4) {
+		PriceChangeFinish.innerHTML = "600dkk"
 
+	let NewPrice = +showPrice + +600;
+   console.log(NewPrice);
+	totalPrice.innerHTML = NewPrice.toLocaleString() + " dkk"
 
+	} 
 }
 	
 
 /*if the user clicks anywhere outside the select box,
 then close all select boxes:*/
-
 
 document.addEventListener("click", closeAllSelect);
 document.addEventListener("click", addline);

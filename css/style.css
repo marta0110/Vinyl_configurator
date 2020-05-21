@@ -1,5 +1,7 @@
 body {
+	width: 100%;
 	margin: 0;
+	padding: 0;
 	overflow-x: hidden;
 	height: 100%;
 }
@@ -451,7 +453,7 @@ p, h5, h6, .select-selected{
 	font-weight: 400;
 	font-size: 1em;
 }
-
+form fieldset button,
 .customize_vinyl .customize_vinyl_button {
 		border-top-left-radius: 11px;
 	-moz-border-radius-topleft: 11px;
@@ -474,7 +476,7 @@ p, h5, h6, .select-selected{
 	color: #fff;
 }
 
-
+form fieldset button:hover,
 .customize_vinyl .customize_vinyl_button:hover {
 	background-color: #000;
 	color: white;
@@ -917,12 +919,12 @@ margin-block-start: 0em;
 	border: 2px solid #000;
 }
 
-/* On mouse-over, add a grey background color */
+/* On mouse-over */
 .container:hover input ~ .checkmark {
   background-color: #fff;
 }
 
-/* When the checkbox is checked, add a blue background */
+/* When the checkbox is checked */
 .container input:checked ~ .checkmark {
   background-color: #000;
 }
@@ -985,11 +987,96 @@ width: 100%;
 .additional_information .confirm_button{
 	margin-left: 65%;
 }
-.wrapper_correct,
+
+
+/* ADRESS FORM */
+form{
+	background-color: #D3DBDA;
+	width: 100%;
+	height: auto;
+
+}
+form fieldset{
+	background-color: #D3DBDA;
+	width:80%;
+	height: auto;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 10px;
+    justify-content: start;
+  position: relative;
+     padding-bottom: 10vw;
+	border: 0;
+}
+ 
+ form fieldset>div {
+                display: grid;
+	            grid-template-columns: 1fr;
+                padding-bottom: 10px;
+                margin: 0;
+                justify-content: start;
+                width: 300px;
+	     grid-row-gap: 13px;
+            }
+
+form fieldset legend h3{
+      font-size: 1.4em;
+            }
+form fieldset legend p{
+	   font-size: 1em;
+	margin-block-start: 0em;
+	margin-block-end: 0.5em;
+
+}
+form select,
+form input {
+  width: 100%;
+  padding: 15px 22px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+    font-size: 0.8em;
+	background-color: #fff;
+}
+form select,
+form textarea{
+	width: 80%;
+  padding: 15px 22px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+    font-size: 0.8em;
+	border-radius: 0;
+}
+
+form input[type=text]:focus {
+ border: 1px solid #EB5D1B !important;
+}
+form select,
+  form fieldset>div input {
+                min-width: 80vw;
+                max-width: 80vw;
+            }
+
+  form    :required {
+                border: 0px;
+            }
+
+   
+            fieldset>div .correct {
+                min-width: 20vw;
+                max-width: 20vw;
+				    align-self: center;
+            }
+
+
 .wrapper_required {
   position: relative;
   display: inline-block;
   z-index: 1;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
 
 }
 .wrapper_correct{
@@ -998,38 +1085,53 @@ width: 100%;
 	display: none;
 	
 }
-.wrapper_correct input,
-.wrapper_required input {
+.wrapper_correct input {
   padding-right: 14px;
 }
 
 .wrapper_required:after {
-  content: "*";
-  position: absolute;
-  left: 4px;
-  top: +3px;
-  color: red;
-  z-index: 5;
-}
-
- .wrapper_required input:valid {
-           border: 1px solid orange;
-            }
-
- .wrapper_required input:valid:not(:placeholder-shown)~..wrapper_correct:after{
-    background-image: url(images/correct.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+ content: "*";
     position: absolute;
-    right: 10px;
-    top: 3px;
+    left: 7px;
+    top: 24px;
+    color: red;
     z-index: 5;
-    content: "";
-    width: 12px;
-    height: 12px;
+ 
 }
 
-     
+ form input:valid {
+           border-bottom: 4px solid black !important;
+  }
+form select:hover,
+form .wrapper_required input:hover {
+ border: 1px solid #EB5D1B !important;
+}
+form select:focus,
+form .wrapper_required input:focus {
+ border: 1px solid #EB5D1B !important;
+}
+
+form  div input:valid:not(:placeholder-shown)~.correct::after {
+
+    content: url(images/correct.png);
+	position: absolute;
+    top: 20px;
+    right: 87px;
+
+            }
+  form   div input:invalid:not(:placeholder-shown)~.correct::after {
+content: "this field is required";
+    color: red;
+    position: absolute;
+    width: 100%;
+    bottom: -15px;
+    left: 0;
+            }
+form fieldset button{
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
 
 
 @media (max-width: 360px){
@@ -1166,6 +1268,11 @@ width: 100%;
 }
 .additional_information .select-items div, .select-selected {
     font-size: 1em;
+}
+	form div input:valid:not(:placeholder-shown)~.correct::after {
+  
+    top: 18px;
+    right: 22%;
 }
 
 @media (min-width: 1024px) {
@@ -1423,8 +1530,74 @@ width: 100%;
 	.additional_information .select-selected:after {
     right: 30px;
 }
+	
+	/* adress form */
+	.form_grid{
+		width: 100%;
+		margin: 0 auto;
+	}
+	
+.wrapper_required {
+        display: grid;
+    grid-template-columns: 95% 5%;
+    width: 250px;
+}
+	form select,
+	form fieldset > div input {
+    min-width: 350px;
+    max-width: 350px;
+	}
+	
+	form fieldset {
+ display: grid;
+   grid-template-columns: 1fr 1fr;
+ 
+}
+	form fieldset>div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 10px;
+    margin: 0;
+    justify-content: start;
+    /* width: 300px; */
+    grid-row-gap: 13px;
+    width: 100%;
+	
+	}
+	.form_grid {
+    margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 }
 
+form fieldset>div {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    /* padding-bottom: 10px; */
+    /* margin: 0; */
+    /* justify-content: start; */
+    /* width: 300px; */
+    /* grid-row-gap: 13px; */
+    width: 100vw;
+}
+form fieldset>div {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-bottom: 10px;
+    margin: 0;
+    justify-content: start;
+    width: 300px;
+    grid-row-gap: 13px;
+	}
+	form div input:valid:not(:placeholder-shown)~.correct::after {
+    top: 19px;
+    right: -35%;
+	}
+	form textarea {
+    width: 175%;
+    column-span: all;
+	}
+	}
 
 @media (min-width: 1200px) {
 
@@ -1577,9 +1750,7 @@ width: 100%;
 		grid-template-columns: 1fr 1fr;
 	width: 90%;
 	}
-	.customize_vinyl .customization_desc{
-		
-	}
+
 
 	/* footer */
 	footer .logo_footer {
@@ -1596,6 +1767,9 @@ width: 100%;
 	}
 
 	/* hot deals landing page */
+	forms{
+		width: 70%;
+	}
 	.summary {
 
     margin-top: 50px;
