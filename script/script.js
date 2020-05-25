@@ -23,22 +23,21 @@ function showAbout(a) {
 	setInterval(function(){
 		showSlides(slideIndex);
 		slideIndex++;
-		console.log(slideIndex);
+	//	console.log(slideIndex);
 	}, 5000);
 	// setTimeout(showSlides(slideIndex), 300)
 }
 
 function showData(a) {
-	//console.log(a.acf.image.url)
+
    var b = aboutTemplate.cloneNode(!0);
     b.querySelector(".header_slideshow").textContent = a.title.rendered;
 	b.querySelector(".paragraph").textContent = a.content.rendered;
 	b.querySelector("#price").textContent = a.acf.vinyl_hot_deals;
-	// b.querySelecotr().style.backgroundImage = url();
 	b.querySelector(".img").setAttribute("src", a.acf.image.url);
-	//b.querySelector(".img").setAttribute("src", a._embedded["wp:featuredmedia"][0].media_details.sizes.large.source_url)
+
 						  
-	aboutList.appendChild(b)
+	aboutList.appendChild(b);
 }
 
 fetchAbout();
@@ -61,69 +60,25 @@ function showSlides(n) {
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";  
-	  console.log(dots[i]);
+	 // console.log(dots[i]);
+	
   }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-	console.log(dots.length)
   slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
+
+// Add active class to the current button (highlight it)
+if (slides[slideIndex-1].style.display = "block"){
+var header = document.getElementsByClassName("Highlight");
+for (var i = 0; i < dots.length; i++) {
+  dots[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  if (current.length > 0) { 
+    current[0].className = current[0].className.replace(" highlight_dot", "");
+  }
+  this.className += " highlight_dot";
+  });
+}
+
+} else{
+dots[i].style.backgroundColor = "#E6E6E6";
+}}
 	
-}
-
-
-
-/*function fetchSlideShow(){
- 
- let endpoint = "http://loreleiheckmann.com/wordpress/wordpress/wp-json/wp/v2/Vinyls?per_page=20&_embed=wp:featuredmedia";
- fetch(endpoint)
-      .then(e => e.json())
-      .then(showSlideShow);
-	
-}
-function showSlideShow(data){
-    console.log(data);
-       data.forEach(showSingleSlide);   
-    showSlides();
-}
-function showSingleSlide(aSlide) {
- 
-    let template = document.querySelector(".slide_template").content;
-    let clone = template.cloneNode(true);
-    console.log(aSlide);  
-    //clone.querySelector("img").setAttribute("src", aSlide._embedded["wp:featuredmedia"][0].media_details.source_url);
-	console.log ("checked")
- 
-    
-    let SlideList = document.querySelector("#SlideList");
-    SlideList.appendChild(clone);
- }
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

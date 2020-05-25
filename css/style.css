@@ -8,8 +8,22 @@ body {
 
 /*
 
-to do 1. slideshow counter 2. parallax 3. slideshow fetch time
-4. rendered specifications from hot deals 5. change of amount - not fixed but dynamic +barcodes and border bottom 6. fixed summary not jumping*/
+to do 
+
+1. slideshow counter
+
+3. change of amount - not fixed but dynamic + barcodes and border bottom  - ask front -end dev maybe some framework? with all the opportunities of client choice is extremely big amount of work to code.
+
+4. fixed summary section - the section position is fixed - change for absolute. Due to this fact while changing and displaying none/block sections on the right the sumary section goes up to the top:0. idk why.
+
+5. progress bar animation doesnt work on 66% and 100%. it indicates the longer width of the bar but it doesn't animate it.
+
+6. cms data under summary - I'm not sure it's necessary or maybe it can be hardcoded?
+
+*/
+
+
+/* mobile first */
 
 /* header */
 
@@ -18,9 +32,8 @@ h1, h2, h3, h4 {
 }
 p, h5, h6, .select-selected{
 	font-family: "Roboto", sans-serif;
-	
-	
 }
+
 .header {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -140,6 +153,7 @@ p, h5, h6, .select-selected{
 	height: 67px;
 	background-size: contain;
 	justify-self: center;
+	cursor: pointer;
 }
 
 .header .search {
@@ -159,7 +173,7 @@ p, h5, h6, .select-selected{
 	display: none;
 }
 
-/* landing page vinyl hot deals slideshow */
+/* landing page vinyl hot deals slideshow - SECTION 1*/
 
 /* The dots/bullets/indicators */
 
@@ -188,7 +202,7 @@ p, h5, h6, .select-selected{
 
 }
 
-.active{
+.highlight_dot{
 	 background-color: #000 !important;
 	
 }
@@ -399,7 +413,7 @@ p, h5, h6, .select-selected{
 	font-size: 0.8em;
 }
 
-/* parallax */
+/* section 2 */
 
 .section_2 {
 	position: relative;
@@ -554,7 +568,7 @@ footer .contact_us_footer .contact_us_button_footer {
 	border: none;
 	width: 100px;
 	margin-bottom: 20px;
-	width: 29%;
+	width: 34%;
 	height: 40px;
 	font-size: 1em;
 	font-family: "Poppins", sans-serif;
@@ -673,18 +687,43 @@ footer .social_media .linkedin:hover {
 	color: white;
 	background-position:left bottom;
 }
+/* progress bar animation */ 
+.meter { 
+    height: 10px;
+    position: relative;
+    background: #707070;
+    overflow: hidden;
+}
 
-.summary .process_line_1{
-	width: 100%;
-	border-bottom: 10px solid #707070;
+.meter span {
+    display: block;
+    height: 100%;
+}
+
+.progress {
+    background-color: #EB5D1B;
+    animation: progressBar 2s ease-in-out;
+    animation-fill-mode:both; 
+}
+/* doesnt work */
+.ProgressChange{
+    animation: progressBarChange 2s ease-in-out;
+	  animation-fill-mode:both; 
+	  background-color: #EB5D1B;
 	
 }
-.summary .process_line_2{
-	width: 50%;
-	border-bottom: 10px solid #EB5D1B;
-	margin-top:-10px;
-	
+
+@keyframes progressBar {
+  0% { width: 0; }
+  100% { width: 100%; }
 }
+
+@keyframes progressBarChange {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+
 .summary .summary_header{
 	display: grid;
 	grid-template-columns: 15% 75%;
@@ -756,9 +795,16 @@ margin-block-start: 0;
 hr{
 	border-bottom: 5px solid black;
 }
+.none{
+	display: none !important;
+}
+#step3,
 .additional_information{
 	background-color: #D3DBDA;
 	padding: 5px;
+}
+.additional_information{
+	display: block;
 }
 .additional_information .custom-select{
 	position: relative;
@@ -767,7 +813,6 @@ hr{
 .additional_information .custom-select select {
   display: none; /*hide original SELECT element:*/
 }
-
 
 /*style the arrow inside the select element:*/
 .additional_information  .select-selected:after {
@@ -825,7 +870,7 @@ hr{
 .additional_information .music_online{
 	display: grid;
 	grid-template-columns: 25% 75%;
-	padding-bottom: 10px;
+	
 }
 
 .additional_information .music_online .text{
@@ -837,7 +882,9 @@ hr{
 .additional_information .additional_inf_amount{
 	display: grid;
 	grid-template-columns: 25% 50% 25%;
-	padding-bottom: 10px;
+
+
+
 }
 .additional_information .checkbox,
 .additional_information .custom-select{
@@ -853,8 +900,6 @@ hr{
 .additional_information .additional_inf_amount .custom-select:hover{
 		border: 1px solid #EB5D1B;
 }
-
-
 
 .additional_information .text{
 	border-top: 1px solid #000;
@@ -959,6 +1004,7 @@ margin-block-start: 0em;
 	font-weight: 700;
 	
 }
+
 .additional_form input[type=text], select {
 width: 100%;
     padding: 12px 20px 70px 10px;
@@ -986,14 +1032,16 @@ width: 100%;
 }
 .additional_information .confirm_button{
 	margin-left: 65%;
+    margin-top: 15px;
 }
 
 
-/* ADRESS FORM */
+/* ADRESS FORM HOT_DEALS.HTML*/
 form{
 	background-color: #D3DBDA;
 	width: 100%;
 	height: auto;
+	display: none;
 
 }
 form fieldset{
@@ -1057,18 +1105,17 @@ form select,
   form fieldset>div input {
                 min-width: 80vw;
                 max-width: 80vw;
-            }
+ }
 
-  form    :required {
+form    :required {
                 border: 0px;
             }
 
-   
-            fieldset>div .correct {
+fieldset>div .correct {
                 min-width: 20vw;
                 max-width: 20vw;
 				    align-self: center;
-            }
+ }
 
 
 .wrapper_required {
@@ -1099,7 +1146,7 @@ form select,
  
 }
 
- form input:valid {
+ .adress_form input:valid {
            border-bottom: 4px solid black !important;
   }
 form select:hover,
@@ -1131,15 +1178,162 @@ form fieldset button{
 	margin: 0 auto;
 	margin-top: 20px;
 }
+input:-internal-autofill-selected{
+	background-color: #fff !important;
+}
 
 
+/*  CONFIRMATION HOT_DEALS.HTML */
+#step3{
+	display: none;
+}
+#step3 img{
+	width: 100%;
+	    margin: 50px 0px;
+}
+
+#step3 h4{
+    font-size: 1.2em;
+	text-align: center;
+}
+#step3 p {
+	    font-size: 1em;
+	width: 90%;
+	
+	    margin: 0 auto;
+}
+/* CUSTOMIZE YOUR VINYL CUSTOMIZE.HTML */
+
+.step_1_questions{
+	width: 100%;
+	margin:0 auto;
+}
+.step_1_questions .step_1_header{
+	display: grid;
+	grid-template-columns: 30% 70%;
+	align-content: center;
+	width: 80%;
+	margin: 0 auto;
+	
+}
+
+.step_1_questions .step_1_header span{
+	color: #EB5D1B;
+	font-size: 3em;
+}
+.step_1_questions .step_1_header h3{
+	  font-size: 1.3em;
+	font-weight: 500;
+	align-self: end;
+}
+.step_1_questions .q2,
+.step_1_questions .q1 {
+    margin: 0 10%;
+    width: 80%;
+}
+.step_1_questions  .q1 .slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 2px;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+	background: #000;
+}
+
+.step_1_questions  .q1  .slider:hover {
+  opacity: 1;
+}
+.step_1_questions  .q1  .slider::after{
+	content: "1.500";
+	color: #000;
+	position: absolute;
+    right: 10%;
+    top: 37%;
+    font-size: 1.2em;
+}
+.step_1_questions  .q1  .slider::before{
+	content: "250";
+	color: #000;
+	position: absolute;
+    left: 10%;
+    top: 37%;
+    font-size: 1.2em;
+}
+.step_1_questions  .q1  .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #000;
+  cursor: pointer;
+	border-radius: 100%;
+}
+
+.step_1_questions  .q1 .slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #000;
+  cursor: pointer;
+}
+.step_1_questions .q2 .vinyl_inches{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 50px;
+
+}
+.step_1_questions .q2 .seven{
+		background: url('images/Group%20550.svg') no-repeat;
+		width: 45px;
+		height: 45px;
+		background-size: cover;
+		justify-self: right;
+	    cursor: pointer;
+}
+.seven_active{
+	border: 2px solid black;
+	
+}
+.step_1_questions .q2 .seven:hover{
+		background: url('images/7_hovered.png') no-repeat;
+		width: 45px;
+		height: 45px;
+		background-size: cover;
+		justify-self: right;
+	    cursor: pointer;
+}
+.step_1_questions .q2 .twelve{
+		background: url('images/12_nothovered.png') no-repeat;
+		width: 45px;
+		height: 45px;
+		background-size: cover;
+		    justify-self: left;
+	    cursor: pointer;
+}
+
+.step_1_questions .q2 .twelve:hover{
+		background: url('images/12_hovered.png') no-repeat;
+		width: 45px;
+		height: 45px;
+		background-size: cover;
+		    justify-self: left;
+	    cursor: pointer;
+}
+
+
+
+
+
+.live_preview{
+	
+}
 
 @media (max-width: 360px){
 	.Highlight {
 	grid-template-columns: 35% 65%;
 }
-
 }
+
 /* 48em = 768px */
 
 @media (min-width: 768px) {
@@ -1431,6 +1625,7 @@ form fieldset button{
 	.vinyl_plate {
 		height: 115vh;
 	}
+	
 
 	/* footer */
 	.footer {
@@ -1504,8 +1699,7 @@ form fieldset button{
 }
 /* HOT_DEALS LANDING PAGE */
 .additional_inf_lp{
-	    margin-top: 70px;
-	    position: relative;
+	      margin-top: 7%;
 }
 	.additional_inf_lp .summary{
 		background-color: #fff;
@@ -1518,23 +1712,56 @@ form fieldset button{
 	    left: 0px;
     position: fixed;
     z-index: 1;
-    width: 29%;
+    width: 35%;
     order: 1;
+	}
+	.additional_inf_lp  .adress_form{
+		margin-top: 10%;
+		   width: 70%;
+		 height: auto;
+		 margin-left: 29%
+	}
+	.form_grid{
+		grid-column-gap: 50px;
 	}
 
 .additional_inf_lp .additional_information{
     height: auto;
-    width: 68%;
-    margin-left: 29%
+        width: 61%;
+    margin-left: 35%;
 	}
 	.additional_information .select-selected:after {
     right: 30px;
 }
-	
+	.additional_information .weight, .additional_information .barcode, .additional_information .sticker, .additional_information .additional_inf_amount {
+
+  padding-bottom: 10px; 
+ width: 85%;
+	}
+	.additional_information .music_online{
+
+	padding-bottom: 10px;
+	width: 85%;
+}
+
+	.additional_information .confirm_button{
+	margin-left: 50%;
+
+}
+
+
 	/* adress form */
-	.form_grid{
-		width: 100%;
-		margin: 0 auto;
+	#step3,
+	#form_grid{
+    width: 65%;
+    margin-left: 38%;
+ 
+	}
+
+#form_grid legend{
+	padding-top: 15%;
+	    width: 75%;
+
 	}
 	
 .wrapper_required {
@@ -1544,13 +1771,15 @@ form fieldset button{
 }
 	form select,
 	form fieldset > div input {
-    min-width: 350px;
-    max-width: 350px;
+    min-width: 200px;
+    max-width: 200px;
 	}
 	
 	form fieldset {
  display: grid;
    grid-template-columns: 1fr 1fr;
+		width: 100%;
+		margin: 0 35px;
  
 }
 	form fieldset>div {
@@ -1559,13 +1788,12 @@ form fieldset button{
     padding-bottom: 10px;
     margin: 0;
     justify-content: start;
-    /* width: 300px; */
     grid-row-gap: 13px;
-    width: 100%;
+ 
 	
 	}
 	.form_grid {
-    margin: 0 auto;
+        margin-left: 0;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 }
@@ -1594,24 +1822,31 @@ form fieldset>div {
     right: -35%;
 	}
 	form textarea {
-    width: 175%;
+    width: 200%;
     column-span: all;
 	}
+	#step3 {
+		padding-top: 10%;
+	}
+	#step3 img {
+    width: 100%;
+    margin: 15% 0;
+}
 	}
 
 @media (min-width: 1200px) {
 
 	/* TOP HEADER */
 	.header {
-		grid-template-columns: 13vw 59vw 12vw 5vw 4vw 4vw;
-		height: 50px;
+	 grid-template-columns: 10vw 59vw 10vw 3vw 2vw 3vw;
+    
 	}
 	.header .logo {
 		background: url(images/dicentia_logo.png) center no-repeat;
 		background-size: contain;
 		justify-self: center;
 		order: 1;
-		width: 13vw;
+		width: 10vw;
 		height: 1vw;
 		padding: 21px 0 0 0;
 	}
@@ -1775,9 +2010,16 @@ form fieldset>div {
     margin-top: 50px;
 }
 	.additional_inf_lp .summary {
-		top:70px;
+		    margin-top: 10px;
 	}
-	
+		form fieldset {
+    width: 80%;
+    margin: 0;
+    padding-left: 60px;
+	}
+	form div input:valid:not(:placeholder-shown)~.correct::after {
+    right: 58px;
+}
 	}
 @media (min-width: 1400px) {
 	.header {
@@ -1797,6 +2039,20 @@ form fieldset>div {
 		height: 5vh;
 
 	}
+	#form_grid {
+    width: 70%;
+    margin-left: 30%;
+	}
+	.form_grid{  
+		width: 100%;}
+	form select,
+	form fieldset > div input{
+		max-width:300px;
+		min-width: 300px;
+	}
+	form_grid legend {
+    padding-top: 4%;
+}
 	/*section 1 */
 	.hot_deals_slideshow{
 		height: 60vh;
@@ -1809,6 +2065,7 @@ form fieldset>div {
 	#hot_deals_slideshow .hot_deals_grid .desc {
 		padding-left: 70px;
 	}
+	
 	/* footer */
 	footer {
 		position: relative;
@@ -1855,6 +2112,13 @@ form fieldset>div {
 		width: 34px;
 	}
 	/* hot deals lp*/
+	
+	.additional_inf_lp .summary{
+		width: 30%;
+	}
+	.additional_inf_lp .additional_information {
+    margin-left: 30%;
+	}
 	.summary h6 {
     font-size: 0.95em;
 		font-weight: 700;
@@ -1873,18 +2137,55 @@ form fieldset>div {
 	.additional_information {
     padding: 50px;
 }
+	.additional_inf_lp{
+		margin-top: 0;
+	}
 		.additional_inf_lp .additional_information {
     height: auto;
-    margin-top: 7%;
+    margin-top: 6.5%;
 	}
 	.additional_inf_lp .summary {
-    top: 69px;
+     margin-top: 1.5%;
 }
+	.additional_inf_lp  .adress_form,
 	.additional_inf_lp .additional_information {
-    width: 65%;
+    width: 62%;
 }
 	.summary .specifications .spec_grid p {
     margin-block-start: 0.6em;
     margin-block-end: 0.6em;
 }
+form div input:valid:not(:placeholder-shown)~.correct::after {
+
+    right: -16%;
 }
+	#step3 {
+    width: 70%;
+		    margin-left: 30%;
+
+	}
+	 #form_grid {
+    width: 70%;
+}
+	#step3 h4 {
+	margin-block-end: 0;
+	}
+	#step3 img {
+	    width: 80%;
+    margin: 5% 10%;
+	}
+	}
+	@media (min-width: 1600px){
+		.additional_inf_lp .summary {
+    margin-top: 7px;
+		}
+	}
+		@media (min-width: 1800px){
+		.additional_inf_lp .summary {
+    margin-top: 0;
+		}
+			
+.header .logo {
+    width: 13vw;
+	}
+	}

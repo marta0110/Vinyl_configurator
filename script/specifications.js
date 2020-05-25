@@ -1,16 +1,76 @@
-//on click of the submit button show diffrent section
+//animate progress bar
 
-let SubmitButton = document.getElementById("additional_informations_button");
+//open adress section on click hotdeals addditional info
+let socialFloat = document.querySelector('.summary');
+let footer = document.querySelector('.footer');
+let form = document.querySelector(".adress_form");
+let additionalInf = document.querySelector(".additional_information");
+let progressBar = document.querySelector(".progress");
+let progressWidth = document.querySelector(".showProgress");
+let confirmationSection = document.querySelector("#step3");
+let hotDealsSection = document.querySelector(".additional_inf_lp")
+let orderConfirmed = document.querySelector("#order_confirmed")
+console.log(form)
 
-let AdressForm = document.getElementById("adress_form");
-let AdditionalInf = document.querySelector(".additional_information");
+orderConfirmed.addEventListener("click", confirmationMsg);
+
+function confirmationMsg(){
 
 
-function GoToAdress(){
-    AdressForm.style.display = "block";
-	  AdditionalInf.style.display="none";
-   
-  }
+	confirmationSection.style.display = "block";
+	progressWidth.style.width = "100%";
+	form.style.display ="none";
+	additionalInf.style.display ="none";
+	additionalInf.classList.add ="none";
+	
+}
+
+function openForm(){
+
+	additionalInf.style.display ="none";
+	form.style.display ="block";
+	progressBar.classList.add = "ProgressChange";
+	progressWidth.style.width = "66%";
+	
+
+	if ($(window).width() < 1200) {
+   alert('Less than 960');
+}
+else {
+//  socialFloat.style.marginTop = "8%";
+}
+}
+
+
+//open confirmation section on click adress
+
+console.log(confirmationMsg)
+console.log(hotDealsSection)
+console.log(orderConfirmed)
+
+// fixed summary under hot_deals additional informations section 
+function checkOffset() {
+	function getRectTop(el) {
+		var rect = el.getBoundingClientRect();
+		return rect.top;
+	}
+
+	if ((getRectTop(socialFloat) + document.body.scrollTop) + socialFloat.offsetHeight >= (getRectTop(footer) + document.body.scrollTop) - 10)
+		socialFloat.style.position = 'absolute';
+	//	socialFloat.style.marginTop = "18px";
+	//socialFloat.style.top = "0";
+
+
+	if (document.body.scrollTop + window.innerHeight < (getRectTop(footer) + document.body.scrollTop))
+		socialFloat.classList.add = "position" // restore when you scroll up
+
+}
+
+
+document.addEventListener("scroll", function () {
+	checkOffset();
+});
+
 
 
 // set the total price amount
@@ -189,28 +249,3 @@ document.addEventListener("click", closeAllSelect);
 document.addEventListener("click", addline);
 
 
-// fixed summary under hot_deals additional informations section 
-
-var socialFloat = document.querySelector('.summary');
-var footer = document.querySelector('.footer');
-
-function checkOffset() {
-	function getRectTop(el) {
-		var rect = el.getBoundingClientRect();
-		return rect.top;
-	}
-
-	if ((getRectTop(socialFloat) + document.body.scrollTop) + socialFloat.offsetHeight >= (getRectTop(footer) + document.body.scrollTop) - 10)
-		socialFloat.style.position = 'absolute';
-	//	socialFloat.style.marginTop = "18px";
-	//socialFloat.style.top = "0";
-
-
-	if (document.body.scrollTop + window.innerHeight < (getRectTop(footer) + document.body.scrollTop))
-		socialFloat.classList.add = "position" // restore when you scroll up
-	
-}
-
-document.addEventListener("scroll", function () {
-	checkOffset();
-});
