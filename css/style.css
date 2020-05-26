@@ -20,6 +20,8 @@ to do
 
 6. cms data under summary - I'm not sure it's necessary or maybe it can be hardcoded?
 
+
+7. fetch the e-mail adress from form to conirmation page.
 */
 
 
@@ -30,7 +32,7 @@ to do
 h1, h2, h3, h4 {
 	font-family: "Poppins", sans-serif;
 }
-p, h5, h6, .select-selected{
+p, h5, h6, .select-selected, label{
 	font-family: "Roboto", sans-serif;
 }
 
@@ -882,9 +884,6 @@ hr{
 .additional_information .additional_inf_amount{
 	display: grid;
 	grid-template-columns: 25% 50% 25%;
-
-
-
 }
 .additional_information .checkbox,
 .additional_information .custom-select{
@@ -1077,6 +1076,7 @@ form fieldset legend p{
 	margin-block-end: 0.5em;
 
 }
+.engravement_input input,
 form select,
 form input {
   width: 100%;
@@ -1097,7 +1097,7 @@ form textarea{
     font-size: 0.8em;
 	border-radius: 0;
 }
-
+.engravement_input input[type=text]:focus,
 form input[type=text]:focus {
  border: 1px solid #EB5D1B !important;
 }
@@ -1117,7 +1117,9 @@ fieldset>div .correct {
 				    align-self: center;
  }
 
-
+.engravement_input{
+	
+}
 .wrapper_required {
   position: relative;
   display: inline-block;
@@ -1145,7 +1147,7 @@ fieldset>div .correct {
     z-index: 5;
  
 }
-
+.engravement_input input:valid,
  .adress_form input:valid {
            border-bottom: 4px solid black !important;
   }
@@ -1157,7 +1159,7 @@ form select:focus,
 form .wrapper_required input:focus {
  border: 1px solid #EB5D1B !important;
 }
-
+.engravement_input input:valid:not(:placeholder-shown)~.correct::after,
 form  div input:valid:not(:placeholder-shown)~.correct::after {
 
     content: url(images/correct.png);
@@ -1173,7 +1175,9 @@ content: "this field is required";
     width: 100%;
     bottom: -15px;
     left: 0;
-            }
+	font-family: "Roboto", "sans-serif";
+	  font-size: 0.8em;
+}
 form fieldset button{
 	margin: 0 auto;
 	margin-top: 20px;
@@ -1226,6 +1230,9 @@ input:-internal-autofill-selected{
 	font-weight: 500;
 	align-self: end;
 }
+.step_1_questions .engravement,
+.step_1_questions .q4,
+.step_1_questions .q3,
 .step_1_questions .q2,
 .step_1_questions .q1 {
     margin: 0 10%;
@@ -1320,13 +1327,76 @@ input:-internal-autofill-selected{
 	    cursor: pointer;
 }
 
-
-
-
-
-.live_preview{
+/* RADIO BUTTONS YER OR NO */
+.step_1_questions .yes-or-no-option-container{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 50px;
+}
+.step_1_questions .yes-or-no-option-container .yes-or-no-option {
+	width: 80%;
+	height: auto;
+	border: 2px solid #D3DBDA;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 10px;
+	padding: 10px;
+	display: inline-block;
+	 display: inline-block;
+  position: relative;
 	
 }
+
+.step_1_questions .yes-or-no-option-container .yes-or-no-option input[type='radio'] {
+  display: none;
+}
+
+.step_1_questions .yes-or-no-option-container .yes-or-no-option  label:before {
+  content: " ";
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  margin: 0 15px 0 0;
+     width: 22px;
+    height: 22px;
+    border-radius: 100%;
+  border: 2px solid #D3DBDA;
+  background-color: #fff;
+}
+
+ .step_1_questions .yes-or-no-option-container .yes-or-no-option input[type=radio]:checked + label:after {
+  border-radius: 11px;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 21px;
+  left: 16px;
+  content: " ";
+  display: block;
+  background: #000;
+}
+.step_1_questions .engravement{
+	display: none;
+}
+.engravement_input{
+  position: relative;
+   display: grid;
+   grid-template-columns: 95% 5%;
+}
+.engravement_input input:valid:not(:placeholder-shown)~.correct::after{
+    right: 30px !important;
+}
+.engravement_input input:invalid:not(:placeholder-shown)~.correct::after {
+   content: "Enter at least 3 characters";
+    color: #707070;
+    position: absolute;
+    width: 100%;
+    top: -16%;
+    left: 45%;
+	font-family: "Roboto", "sans-serif";
+	  font-size: 0.8em;
+}
+
 
 @media (max-width: 360px){
 	.Highlight {
