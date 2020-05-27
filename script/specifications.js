@@ -49,7 +49,7 @@ console.log(hotDealsSection)
 console.log(orderConfirmed)
 
 // fixed summary under hot_deals additional informations section 
-function checkOffset() {
+/*function checkOffset() {
 	function getRectTop(el) {
 		var rect = el.getBoundingClientRect();
 		return rect.top;
@@ -71,7 +71,7 @@ document.addEventListener("scroll", function () {
 	checkOffset();
 });
 
-
+*/
 
 // set the total price amount
 

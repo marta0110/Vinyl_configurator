@@ -36,6 +36,9 @@ p, h5, h6, .select-selected, label{
 	font-family: "Roboto", sans-serif;
 }
 
+.active{
+	background-color: #000;
+}
 .header {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
