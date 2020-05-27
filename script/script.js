@@ -11,7 +11,7 @@ function fetchAbout() {
 	let a = new URLSearchParams(window.location.search),
 		b = a.get("category"),
 		c = "http://loreleiheckmann.com/wordpress/wordpress/wp-json/wp/v2/Vinyls?per_page=4" + aboutPage;
-	    b && (c = "http://loreleiheckmann.com/wordpress/wordpress/wp-json/wp/v2/Vinyls?per_page=4" + aboutPage + "&categories=" + b), fetch(c).then(function (d) {
+	b && (c = "http://loreleiheckmann.com/wordpress/wordpress/wp-json/wp/v2/Vinyls?per_page=4" + aboutPage + "&categories=" + b), fetch(c).then(function (d) {
 		return d.json()
 	}).then(showAbout)
 }
@@ -32,7 +32,7 @@ function showData(a) {
 	b.querySelector(".paragraph").textContent = a.content.rendered;
 	b.querySelector("#price").textContent = a.acf.vinyl_hot_deals;
 	b.querySelector(".img").setAttribute("src", a.acf.image.url);
-	
+
 	aboutList.appendChild(b);
 	dotHandler()
 }
@@ -40,7 +40,7 @@ function showData(a) {
 fetchAbout();
 
 
-/* SLIDESHOW */ 
+/* SLIDESHOW */
 function plusSlides(n) {
 	showSlides(slideIndex += n);
 }
@@ -67,24 +67,24 @@ function showSlides(n) {
 	slides[slideIndex - 1].style.display = "block";
 }
 
-function dotHandler(){
+function dotHandler() {
 	const sliders = document.querySelectorAll(".mySlides")
 	sliders.forEach((slide, i) => {
-	const dots = slide.querySelectorAll(".dot");
-    dots[i].style.background = '#000';
+		const dots = slide.querySelectorAll(".dot");
+		dots[i].style.background = '#000';
 	})
 }
 
-/* 	CLICK ON ACTIVE SLIDE CODE 
 
-   for (let i = 0; i < dots.length; i++) {
-  dots[i].addEventListener("click", function() {
-  let current = document.getElementsByClassName("active");
-  if (current.length > 0) { 
-    current[0].className = current[0].className.replace(" highlight_dot", "");
-  }
-  this.className += " highlight_dot";
-  });
-} 
-/*
-					
+//	CLICK ON ACTIVE SLIDE CODE 
+
+// for (let i = 0; i < dots.length; i++) {
+// dots[i].addEventListener("click", function() {
+// let current = document.getElementsByClassName("active");
+// if (current.length > 0) { 
+// current[0].className = current[0].className.replace("     	highlight_dot", "");
+// }
+// this.className += " highlight_dot";
+//   });
+// } 
+
