@@ -1,6 +1,5 @@
 //animate progress bar
-
-//open adress section on click hotdeals addditional info
+//open adress section on click hotdeals.html  addditional info
 let socialFloat = document.querySelector('.summary');
 let footer = document.querySelector('.footer');
 let form = document.querySelector(".adress_form");
@@ -10,36 +9,31 @@ let progressWidth = document.querySelector(".showProgress");
 let confirmationSection = document.querySelector("#step3");
 let hotDealsSection = document.querySelector(".additional_inf_lp")
 let orderConfirmed = document.querySelector("#order_confirmed")
+let mainWrapper = document.querySelector(".additional_inf_lp")
 console.log(form)
 
 orderConfirmed.addEventListener("click", confirmationMsg);
 
-function confirmationMsg(){
-
-
+function confirmationMsg() {
 	confirmationSection.style.display = "block";
 	progressWidth.style.width = "100%";
-	form.style.display ="none";
-	additionalInf.style.display ="none";
-	additionalInf.classList.add ="none";
-	
+	form.style.display = "none";
+	additionalInf.style.display = "none";
+	additionalInf.classList.add = "none";
 }
 
-function openForm(){
-
-	additionalInf.style.display ="none";
-	form.style.display ="block";
+function openForm() {
+	additionalInf.style.display = "none";
+	form.style.display = "block";
 	progressBar.classList.add = "ProgressChange";
 	progressWidth.style.width = "66%";
-	
 
-	if ($(window).width() < 1200) {
-   alert('Less than 960');
-}
-else {
-//  socialFloat.style.marginTop = "8%";
-}
-}
+	//if ($(window).width() > 1200) {
+	//	alert('more than 1200');
+	//	mainWrapper.style.marginTop = "-50px"
+	//} else {
+		//  socialFloat.style.marginTop = "8%";
+	}
 
 
 //open confirmation section on click adress
@@ -48,43 +42,32 @@ console.log(confirmationMsg)
 console.log(hotDealsSection)
 console.log(orderConfirmed)
 
-// fixed summary under hot_deals additional informations section 
 /*function checkOffset() {
 	function getRectTop(el) {
-		var rect = el.getBoundingClientRect();
+		let rect = el.getBoundingClientRect();
 		return rect.top;
 	}
 
 	if ((getRectTop(socialFloat) + document.body.scrollTop) + socialFloat.offsetHeight >= (getRectTop(footer) + document.body.scrollTop) - 10)
-		socialFloat.style.position = 'absolute';
-	//	socialFloat.style.marginTop = "18px";
-	//socialFloat.style.top = "0";
-
-
-	if (document.body.scrollTop + window.innerHeight < (getRectTop(footer) + document.body.scrollTop))
-		socialFloat.classList.add = "position" // restore when you scroll up
-
+	socialFloat.style.position = 'absolute';
+    if (document.body.scrollTop + window.innerHeight < (getRectTop(footer) + document.body.scrollTop))
+		socialFloat.classList.add = "position" 
 }
-
 
 document.addEventListener("scroll", function () {
 	checkOffset();
 });
-
 */
 
 // set the total price amount
-
 let totalPrice = document.querySelector("#total_price");
 let FixedPrice = document.getElementById('total_price').textContent;
 console.log(FixedPrice)
 let ShowPrice = +FixedPrice;
 totalPrice.innerHTML = ShowPrice.toLocaleString("en") + " dkk"
 
-
 // dropdown list
-
-var x, i, j, selElmnt, a, b, c;
+let x, i, j, selElmnt, a, b, c;
 /*look for any elements with the class "custom-select":*/
 x = document.getElementsByClassName("custom-select");
 for (i = 0; i < x.length; i++) {
@@ -138,7 +121,7 @@ for (i = 0; i < x.length; i++) {
 function closeAllSelect(elmnt) {
 	/*a function that will close all select boxes in the document,
 	except the current select box:*/
-	var x, y, i, arrNo = [];
+	let x, y, i, arrNo = [];
 	x = document.getElementsByClassName("select-items");
 	y = document.getElementsByClassName("select-selected");
 	for (i = 0; i < y.length; i++) {
@@ -169,7 +152,6 @@ function addline() {
 	let MyFinish = document.getElementById("myFinish").value;
 
 
-
 	//elementFinish.style.borderBottom = "4px solid #000";
 	element.style.borderBottom = "4px solid #000";
 	price.style.paddingBottom = "20px";
@@ -183,22 +165,22 @@ function addline() {
 		totalPrice.innerHTML = showPrice.toLocaleString() + " dkk"
 	} else if (MyList == 3) {
 		PriceChange.innerHTML = "350dkk"
-		
+
 		showPrice = +FixedPrice + +350;
 		console.log(showPrice);
 		totalPrice.innerHTML = showPrice.toLocaleString() + " dkk"
-	
+
 
 	} else if (MyList == 4) {
 		PriceChange.innerHTML = "420dkk"
-		
+
 		showPrice = +FixedPrice + +420;
 		console.log(showPrice);
 		totalPrice.innerHTML = showPrice.toLocaleString() + " dkk"
 
 	} else if (MyList == 5) {
 		PriceChange.innerHTML = "500dkk"
-		
+
 		showPrice = +FixedPrice + +500;
 		console.log(showPrice);
 		totalPrice.innerHTML = showPrice.toLocaleString() + " dkk"
@@ -207,45 +189,42 @@ function addline() {
 		totalPrice.innerHTML = ShowPrice.toLocaleString("en") + " dkk"
 	}
 
-	
+
 	console.log(MyFinish)
 	console.log(PriceChangeFinish);
 	if (MyFinish == 1) {
 		PriceChangeFinish.innerHTML = "1500dkk"
-		 
-	let NewPrice = +showPrice + +1500;
-   console.log(NewPrice);
-	totalPrice.innerHTML = NewPrice.toLocaleString() + " dkk"
+
+		let NewPrice = +showPrice + +1500;
+		console.log(NewPrice);
+		totalPrice.innerHTML = NewPrice.toLocaleString() + " dkk"
 
 	} else if (MyFinish == 2) {
 		PriceChangeFinish.innerHTML = "3000dkk"
-	
-	let NewPrice = +showPrice + +3000;
-   console.log(NewPrice);
-	totalPrice.innerHTML = NewPrice.toLocaleString() + " dkk"
+
+		let NewPrice = +showPrice + +3000;
+		console.log(NewPrice);
+		totalPrice.innerHTML = NewPrice.toLocaleString() + " dkk"
 
 	} else if (MyFinish == 3) {
 		PriceChangeFinish.innerHTML = "500dkk"
 
-	let NewPrice = +showPrice + +500;
-   console.log(NewPrice);
-	totalPrice.innerHTML = NewPrice.toLocaleString() + " dkk"
+		let NewPrice = +showPrice + +500;
+		console.log(NewPrice);
+		totalPrice.innerHTML = NewPrice.toLocaleString() + " dkk"
 
 	} else if (MyFinish == 4) {
 		PriceChangeFinish.innerHTML = "600dkk"
 
-	let NewPrice = +showPrice + +600;
-   console.log(NewPrice);
-	totalPrice.innerHTML = NewPrice.toLocaleString() + " dkk"
+		let NewPrice = +showPrice + +600;
+		console.log(NewPrice);
+		totalPrice.innerHTML = NewPrice.toLocaleString() + " dkk"
 
-	} 
+	}
 }
-	
+
 
 /*if the user clicks anywhere outside the select box,
 then close all select boxes:*/
-
 document.addEventListener("click", closeAllSelect);
 document.addEventListener("click", addline);
-
-
