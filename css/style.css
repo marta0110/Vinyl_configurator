@@ -10,16 +10,13 @@ body {
 
 to do 
 
-1. slideshow counter
+1. slideshow on click
 
 3. change of amount - not fixed but dynamic + barcodes and border bottom  - ask front -end dev maybe some framework? with all the opportunities of client choice is extremely big amount of work to code.
-
-4. fixed summary section - the section position is fixed - change for absolute. Due to this fact while changing and displaying none/block sections on the right the sumary section goes up to the top:0. idk why.
 
 5. progress bar animation doesnt work on 66% and 100%. it indicates the longer width of the bar but it doesn't animate it.
 
 6. cms data under summary - I'm not sure it's necessary or maybe it can be hardcoded?
-
 
 7. fetch the e-mail adress from form to conirmation page.
 */
@@ -1025,6 +1022,12 @@ hr {
 	height: 0;
 	width: 0;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+}
 
 /* Create a custom checkbox */
 
@@ -1176,7 +1179,7 @@ form input {
 
 form select,
 form textarea {
-	width: 80%;
+	width: 100%;
 	padding: 15px 22px;
 	margin: 8px 0;
 	box-sizing: border-box;
@@ -1199,14 +1202,6 @@ form fieldset > div input {
 form :required {
 	border: 0px;
 }
-
-fieldset > div .correct {
-	min-width: 20vw;
-	max-width: 20vw;
-	align-self: center;
-}
-
-.engravement_input {}
 
 .wrapper_required {
 	position: relative;
@@ -1240,7 +1235,7 @@ fieldset > div .correct {
 
 .engravement_input input:valid,
 .adress_form input:valid {
-	border-bottom: 4px solid black !important;
+	border-bottom: 4px solid #000 !important;
 }
 
 form select:hover,
@@ -1259,7 +1254,7 @@ form div input:valid:not(:placeholder-shown) ~ .correct::after {
 	content: url(images/correct.png);
 	position: absolute;
 	top: 20px;
-	right: 87px;
+	right: 25px;
 
 }
 
@@ -1278,11 +1273,6 @@ form fieldset button {
 	margin: 0 auto;
 	margin-top: 20px;
 }
-
-input:-internal-autofill-selected {
-	background-color: #fff !important;
-}
-
 
 /*  CONFIRMATION HOT_DEALS.HTML */
 
@@ -1333,7 +1323,7 @@ input:-internal-autofill-selected {
 	font-weight: 500;
 	align-self: end;
 }
-
+.step_1_questions .q5,
 .step_1_questions .engravement,
 .step_1_questions .q4,
 .step_1_questions .q3,
@@ -1501,10 +1491,6 @@ input:-internal-autofill-selected {
 	grid-template-columns: 95% 5%;
 }
 
-.engravement_input input:valid:not(:placeholder-shown) ~ .correct::after {
-	right: 30px !important;
-}
-
 .engravement_input input:invalid:not(:placeholder-shown) ~ .correct::after {
 	content: "Enter at least 3 characters";
 	color: #707070;
@@ -1516,6 +1502,21 @@ input:-internal-autofill-selected {
 	font-size: 0.8em;
 }
 
+/* VINYL PLATES CHOOSE A COLOR */
+.step_1_questions .q5 .vinyl_colors{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-column-gap: 15px;
+	grid-row-gap: 15px;
+}
+.step_1_questions .q5 .vinyl_colors img{
+	width:60px;
+	height: auto;
+}
+.step_1_questions .q5 .vinyl_colors img:hover{
+	background-color: #D3DBDA;
+	cursor: pointer;
+}
 
 @media (max-width: 360px) {
 	.Highlight {
@@ -1622,21 +1623,6 @@ input:-internal-autofill-selected {
 		width: 38px;
 	}
 
-	/* HOT_DEALS LANDING PAGE */
-	/*.additional_inf_lp{
-	display: grid;
-	grid-template-columns: 1fr;
-}
-
-.summary{
-	width: 100%;
-	margin: 0 auto;
-	order:2;
-}
-.additional_information{
-	order: 1;
-}
-*/
 	.additional_information {
 		padding: 20px;
 	}
@@ -1653,9 +1639,8 @@ input:-internal-autofill-selected {
 		font-size: 1em;
 	}
 	form div input:valid:not(:placeholder-shown) ~ .correct::after {
-
 		top: 18px;
-		right: 22%;
+		right: 10px;
 	}
 
 	@media (min-width: 1024px) {
@@ -1932,7 +1917,7 @@ input:-internal-autofill-selected {
 		.wrapper_required {
 			display: grid;
 			grid-template-columns: 95% 5%;
-			width: 250px;
+			width: 290px;
 		}
 		form select,
 		form fieldset > div input {
@@ -1966,11 +1951,6 @@ input:-internal-autofill-selected {
 		form fieldset > div {
 			display: grid;
 			grid-template-columns: 50% 50%;
-			/* padding-bottom: 10px; */
-			/* margin: 0; */
-			/* justify-content: start; */
-			/* width: 300px; */
-			/* grid-row-gap: 13px; */
 			width: 100vw;
 		}
 		form fieldset > div {
@@ -1983,8 +1963,7 @@ input:-internal-autofill-selected {
 			grid-row-gap: 13px;
 		}
 		form div input:valid:not(:placeholder-shown) ~ .correct::after {
-			top: 19px;
-			right: -35%;
+			right: 0;
 		}
 		form textarea {
 			width: 220%;
@@ -2044,7 +2023,7 @@ input:-internal-autofill-selected {
 			width: 100vw;
 			height: 50px;
 			background-color: black;
-			color: white;
+			color: #fff;
 			display: grid;
 			grid-template-columns: 20vw 80vw;
 			z-index: 4;
@@ -2239,7 +2218,7 @@ input:-internal-autofill-selected {
 			top: 70px;
 			border-left: 1px solid #707070;
 			width: 20%;
-
+			
 		}
 
 		footer .menu_footer {
@@ -2286,7 +2265,7 @@ input:-internal-autofill-selected {
 		}
 		form div input:valid:not(:placeholder-shown) ~ .correct::after {
 
-			right: -16%;
+			right: 0;
 		}
 		#step3 h4 {
 			margin-block-end: 0;
@@ -2296,11 +2275,8 @@ input:-internal-autofill-selected {
 			margin: 5% 10%;
 		}
 	}
-	@media (min-width: 1600px) {
 
-	}
 	@media (min-width: 1800px) {
-
 		.header .logo {
 			width: 13vw;
 		}

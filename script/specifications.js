@@ -27,13 +27,7 @@ function openForm() {
 	form.style.display = "block";
 	progressBar.classList.add = "ProgressChange";
 	progressWidth.style.width = "66%";
-
-	//if ($(window).width() > 1200) {
-	//	alert('more than 1200');
-	//	mainWrapper.style.marginTop = "-50px"
-	//} else {
-		//  socialFloat.style.marginTop = "8%";
-	}
+}
 
 
 //open confirmation section on click adress
@@ -41,23 +35,6 @@ function openForm() {
 console.log(confirmationMsg)
 console.log(hotDealsSection)
 console.log(orderConfirmed)
-
-/*function checkOffset() {
-	function getRectTop(el) {
-		let rect = el.getBoundingClientRect();
-		return rect.top;
-	}
-
-	if ((getRectTop(socialFloat) + document.body.scrollTop) + socialFloat.offsetHeight >= (getRectTop(footer) + document.body.scrollTop) - 10)
-	socialFloat.style.position = 'absolute';
-    if (document.body.scrollTop + window.innerHeight < (getRectTop(footer) + document.body.scrollTop))
-		socialFloat.classList.add = "position" 
-}
-
-document.addEventListener("scroll", function () {
-	checkOffset();
-});
-*/
 
 // set the total price amount
 let totalPrice = document.querySelector("#total_price");
@@ -72,27 +49,25 @@ let x, i, j, selElmnt, a, b, c;
 x = document.getElementsByClassName("custom-select");
 for (i = 0; i < x.length; i++) {
 	selElmnt = x[i].getElementsByTagName("select")[0];
-	/*for each element, create a new DIV that will act as the selected item:*/
 	a = document.createElement("DIV");
 	a.setAttribute("class", "select-selected");
 	a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
 	x[i].appendChild(a);
-	/*for each element, create a new DIV that will contain the option list:*/
+
 	b = document.createElement("DIV");
 	b.setAttribute("class", "select-items select-hide");
 	for (j = 1; j < selElmnt.length; j++) {
-		/*for each option in the original select element,
-		create a new DIV that will act as an option item:*/
-		c = document.createElement("DIV");
-		c.innerHTML = selElmnt.options[j].innerHTML;
-		c.addEventListener("click", function (e) {
-			/*when an item is clicked, update the original select box,
-			and the selected item:*/
-			var y, i, k, s, h;
-			s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-			h = this.parentNode.previousSibling;
+
+	c = document.createElement("DIV");
+	c.innerHTML = selElmnt.options[j].innerHTML;
+	c.addEventListener("click", function (e) {
+
+   let y, i, k, s, h;
+	
+		s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+		h = this.parentNode.previousSibling;
 			for (i = 0; i < s.length; i++) {
-				if (s.options[i].innerHTML == this.innerHTML) {
+			if (s.options[i].innerHTML == this.innerHTML) {
 					s.selectedIndex = i;
 					h.innerHTML = this.innerHTML;
 					y = this.parentNode.getElementsByClassName("same-as-selected");
@@ -109,8 +84,7 @@ for (i = 0; i < x.length; i++) {
 	}
 	x[i].appendChild(b);
 	a.addEventListener("click", function (e) {
-		/*when the select box is clicked, close any other select boxes,
-		and open/close the current select box:*/
+		
 		e.stopPropagation();
 		closeAllSelect(this);
 		this.nextSibling.classList.toggle("select-hide");
@@ -150,6 +124,7 @@ function addline() {
 	let value2 = document.querySelector(".value2")
 	let MyList = document.getElementById("mySelect").value;
 	let MyFinish = document.getElementById("myFinish").value;
+	let Sticker = document.querySelector("#sticker");
 
 
 	//elementFinish.style.borderBottom = "4px solid #000";
@@ -189,9 +164,6 @@ function addline() {
 		totalPrice.innerHTML = ShowPrice.toLocaleString("en") + " dkk"
 	}
 
-
-	console.log(MyFinish)
-	console.log(PriceChangeFinish);
 	if (MyFinish == 1) {
 		PriceChangeFinish.innerHTML = "1500dkk"
 
@@ -221,6 +193,14 @@ function addline() {
 		totalPrice.innerHTML = NewPrice.toLocaleString() + " dkk"
 
 	}
+	
+/*	if(Sticker.checked == true){
+		let StickerNewPrice = +showPrice + +350;
+		console.log(StickerNewPrice);
+		totalPrice.innerHTML = StickerNewPrice.toLocaleString() + " dkk"
+	}
+	*/
+
 }
 
 
