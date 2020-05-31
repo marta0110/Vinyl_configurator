@@ -22,6 +22,7 @@ function ButtonEffect() {
 document.getElementById("price").style.backgroundPosition ="right bottom"
 document.getElementById("price").style.backgroundcolor ="#fff"
 document.getElementById("price").style.border = "1px solid #000";
+	console.log("make change")
 }
 
 function ButtonEffectOut() {
@@ -29,4 +30,5 @@ function ButtonEffectOut() {
 document.getElementById("price").style.backgroundPosition ="left bottom"
 document.getElementById("price").style.backgroundcolor ="#000"
 document.getElementById("price").style.border = "none";
+	console.log("back change")
 }

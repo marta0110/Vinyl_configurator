@@ -349,7 +349,6 @@ label {
 	background-position: left bottom;
 	margin-left: 10px;
 	transition: all 1.5s ease;
-	z-index: 6;
 	color: #fff;
 }
 
@@ -583,6 +582,7 @@ footer .contact_us_footer {
 	text-align: center;
 }
 
+.step_1_questions .step_continue_button .step_button,
 .additional_information .confirm_button,
 footer .contact_us_footer .contact_us_button_footer {
 	border-top-left-radius: 11px;
@@ -611,6 +611,7 @@ footer .contact_us_footer .contact_us_button_footer {
 	cursor: pointer;
 }
 
+.step_1_questions .step_continue_buttonstep_continue_button .step_button:hover,
 .additional_information .confirm_button:hover,
 footer .contact_us_footer .contact_us_button_footer:hover {
 	background-color: #000;
@@ -1022,11 +1023,12 @@ hr {
 	height: 0;
 	width: 0;
 }
+
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active  {
-    -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-box-shadow: 0 0 0 30px #fff inset !important;
 }
 
 /* Create a custom checkbox */
@@ -1323,6 +1325,10 @@ form fieldset button {
 	font-weight: 500;
 	align-self: end;
 }
+
+.step_1_questions .q8,
+.step_1_questions .q7,
+.step_1_questions .q6,
 .step_1_questions .q5,
 .step_1_questions .engravement,
 .step_1_questions .q4,
@@ -1347,22 +1353,14 @@ form fieldset button {
 	opacity: 1;
 }
 
-.step_1_questions .q1 .slider::after {
-	content: "1.500";
-	color: #000;
-	position: absolute;
-	right: 10%;
-	top: 37%;
-	font-size: 1.2em;
+.step_1_questions .q1 .vinyl_amounts_slider {
+	display: grid;
+	grid-template-columns: 18% 19% 18% 19% 18% 19%;
+
 }
 
-.step_1_questions .q1 .slider::before {
-	content: "250";
-	color: #000;
-	position: absolute;
-	left: 10%;
-	top: 37%;
-	font-size: 1.2em;
+.step_1_questions .q1 .vinyl_amounts_slider p {
+	display: inline;
 }
 
 .step_1_questions .q1 .slider::-webkit-slider-thumb {
@@ -1449,6 +1447,7 @@ form fieldset button {
 	display: inline-block;
 	display: inline-block;
 	position: relative;
+	cursor: pointer;
 
 }
 
@@ -1503,19 +1502,125 @@ form fieldset button {
 }
 
 /* VINYL PLATES CHOOSE A COLOR */
-.step_1_questions .q5 .vinyl_colors{
+
+.step_1_questions .q5 .vinyl_colors {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-column-gap: 15px;
 	grid-row-gap: 15px;
 }
-.step_1_questions .q5 .vinyl_colors img{
-	width:60px;
+
+.step_1_questions .q5 .vinyl_colors img {
+	width: 60px;
 	height: auto;
 }
-.step_1_questions .q5 .vinyl_colors img:hover{
+
+.step_1_questions .q5 .vinyl_colors img:hover {
 	background-color: #D3DBDA;
 	cursor: pointer;
+}
+
+.step_1_questions .q8 textarea {
+	width: 80vw;
+	height: 50px;
+}
+
+.step_1_questions .step_continue_button {
+	padding-top: 30px;
+	text-align: center;
+
+}
+
+.step_1_questions .step_continue_button .step_button {
+	width: 50% !important;
+}
+
+.configurator-wrapper .live_preview {
+	width: 100%;
+	height: auto;
+	padding: 10%;
+	background-color: #D3DBDA;
+}
+
+.configurator-wrapper .live_preview .specification_description {
+	width: 80%;
+}
+
+.configurator-wrapper .live_preview .summary {
+	display: grid;
+	grid-template-columns: 15% 85%;
+	align-items: center;
+
+}
+
+.configurator-wrapper .live_preview .summary img {
+	justify-self: center;
+}
+
+.configurator-wrapper .live_preview h4,
+.configurator-wrapper .live_preview h3,
+.configurator-wrapper .live_preview h2 {
+	align-self: end;
+	margin-block-end: 0;
+}
+
+.configurator-wrapper .live_preview h2 {
+	font-weight: 500;
+	font-size: 2em;
+}
+
+.configurator-wrapper .live_preview .technical_specifications p,
+.configurator-wrapper .live_preview .specification_description p {
+	margin-block-start: 0;
+}
+
+.configurator-wrapper .live_preview .technical_specifications p {
+	color: #707070;
+}
+
+.configurator-wrapper .live_preview .vinyl_preview_image img {
+	width: 80%;
+	height: auto;
+	padding: 20px 0;
+	
+}
+
+.configurator-wrapper .live_preview .technical_specifications {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.configurator-wrapper .live_preview .price {
+	background-color: #000;
+	color: #fff;
+	display: grid;
+	grid-template-columns: 15% 85%;
+	padding: 10px;
+	margin-left: 20%;
+}
+
+.configurator-wrapper .live_preview .price p {
+	writing-mode: vertical-rl;
+	text-orientation: sideways;
+	padding: 10px;
+	align-self: center;
+}
+
+.configurator-wrapper .live_preview .price h3 {
+	font-size: 2em;
+	margin-block-start: 0;
+
+}
+
+.configurator-wrapper .headline {
+	background-color: #fff;
+	padding: 20px;
+
+}
+
+.configurator-wrapper .headline h1 {
+	margin-block-start: 0em;
+	margin-block-end: 0em;
 }
 
 @media (max-width: 360px) {
@@ -1642,638 +1747,721 @@ form fieldset button {
 		top: 18px;
 		right: 10px;
 	}
+	.step_1_questions .q1 .vinyl_amounts_slider {
+		display: grid;
+		grid-template-columns: 19% 19% 19% 19% 18% 19%
+	}
+	.configurator-wrapper .live_preview .summary {
+		grid-area: summ;
+	}
+	.configurator-wrapper .live_preview .technical_specifications {
+		grid-area: spec;
 
-	@media (min-width: 1024px) {
+	}
+	.configurator-wrapper .live_preview .vinyl_preview_image {
+		grid-area: vinyl;
+	}
+	.configurator-wrapper .live_preview .headline {
+		grid-area: head;
+		grid-column: 2/ span 3;
+		grid-row: 2;
+	}
+	.configurator-wrapper .live_preview .specification_description {
+		grid-area: desc;
 
-		.header {
-			grid-template-columns: 3vw 65vw 10vw 9vw 5vw 6vw;
-			padding: 20px 20px 0px 20px;
-			width: 100vw;
-			height: 51px;
-			background-color: white;
-		}
-		.relative-header {
-			position: absolute;
-			top: 0;
-		}
-		.subheader {
-			z-index: 3 !important;
-		}
-		.header .contact_us_button,
-		.header .mail,
-		.header p {
-			display: block;
-		}
-		.header .logo {
-			height: 28px;
-			justify-self: left;
-			width: 3vw;
-		}
+	}
+	.configurator-wrapper .live_preview .price {
+		grid-area: price;
+	}
+	.configurator-wrapper .live_preview {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas: "summ spec spec" "head head head" "vinyl vinyl vinyl" "desc desc price";
+		padding: 5%;
+	}
+	.configurator-wrapper .live_preview .vinyl_preview_image img {
+		width: 90%;
+	}
+	.configurator-wrapper .live_preview .price {
+		margin-left: 0;
+	}
+	.configurator-wrapper .live_preview .summary {
+		grid-template-columns: 20% 80%;
+	}
+	.configurator-wrapper .live_preview h3 {
+		align-self: center;
 
-		.header .hamburger {
-			order: 2;
-		}
-
-		.header .contact_us_button {
-			order: 3;
-		}
-		.header .search {
-			order: 4;
-			padding: 4px 0 0 0;
-		}
-		.header p {
-			order: 5;
-			justify-self: right;
-			align-self: start;
-			margin-block-start: 0;
-		}
-		.header .mail {
-			order: 6;
-			justify-self: center;
-		}
-		.header li a {
-			font-size: 0.9em;
-			font-family: "Poppins", sans-serif;
-			font-style: normal;
-			border-right: none;
-			padding: 6px 4px 20px 20px;
-		}
-
-
-		.Highlight {
-			grid-template-columns: 25% 75%;
-		}
-		.header li {
-			float: left;
-		}
-
-		.header .menu {
-			clear: none;
-			float: left;
-			max-height: none;
-		}
-		.header .menu-icon {
-			display: none;
-		}
-		/* landing page vinyl hot deals slideshow */
-		.section_1 .color {
-			background-color: #f6f6f6;
-			margin-top: 8px;
-			position: absolute;
-			width: 50%;
-			height: 100%;
-			display: block;
-			top: 60px;
-			left: 50%;
-			z-index: 1;
-
-		}
-
-		#hot_deals_slideshow {
-			grid-template-columns: 1fr;
-			padding-top: 100px;
-		}
-		.hot_deals_grid {
-			order: 1;
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-
-		}
-		#hot_deals_slideshow .hot_deals_grid .desc {
-			order: 1;
-		}
-		#hot_deals_slideshow img {
-			width: 100%;
-			order: 2;
-			z-index: 2;
-		}
-		#hot_deals_slideshow h5 {
-			font-size: 1em;
-		}
-		#hot_deals_slideshow h1 {
-			font-size: 2.5em;
-		}
-		#hot_deals_slideshow p {
-			font-family: "Roboto", sans-serif;
-			font-size: 1.1em;
-			margin-block-start: 0;
-			margin-block-end: 0;
-			width: 90%;
-		}
-		.button_2_col {
-			width: 30%;
-			margin: 0 auto;
-			order: 3;
-			grid-column: 1/span 2
-		}
-		.usp {
-			grid-template-columns: 1fr 1fr 1fr 1fr;
-			z-index: 10;
-			position: relative;
-		}
-		.usp .usp_4,
-		.usp .usp_3,
-		.usp .usp_2,
-		.usp .usp_1 {
-			grid-column-gap: 8px;
-		}
-		.usp .usp_4 p,
-		.usp .usp_3 p,
-		.usp .usp_2 p,
-		.usp .usp_1 p {
-			font-size: 0.8em;
-		}
-
-		/* section 2 */
-		.section_2 {
-			padding-top: 25px;
-		}
-		.needle {
-			background: url(images/needle.png) center no-repeat;
-			top: 0;
-		}
-		.vinyl_plate {
-			height: 115vh;
-		}
-
-
-		/* footer */
-		.footer {
-			z-index: 3;
-		}
-		footer .logo_footer {
-			background: url('images/logo_dicentia_white.png') no-repeat;
-			width: 170px;
-			height: 35px;
-			background-size: contain;
-			justify-self: right;
-
-		}
-
-		footer .menu_footer {
-			grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-			padding-bottom: 15px;
-		}
-
-		.contact_us_footer .mail,
-		.contact_us_footer .phone {
-			grid-template-columns: 45% 55%;
-			grid-column-gap: 10px;
-			padding-top: 15px;
-		}
-
-		footer .social_media .fb {
-			width: 40px;
-		}
-		footer .social_media .linkedin {
-			width: 38px;
-		}
-		footer .social_media .fb:hover {
-			width: 40px;
-		}
-		footer .social_media .linkedin:hover {
-			width: 38px;
-		}
-
-		/* HOT_DEALS LANDING PAGE */
-		.summary .summary_header {
-			grid-template-columns: 15% 75%;
-			grid-column-gap: 0;
-			padding-left: 10px;
-			padding-top: 15px;
-		}
-		.summary .summary_header img {
-			width: 55%;
-			height: auto;
-		}
-		.summary .summary_header h4 {
-			font-size: 0.85em;
-			margin-block-end: 0.5em;
-		}
-
-		.summary h6 {
-			font-size: 0.9em;
-		}
-		.codes,
-		.amount,
-		.specification_header {
-			font-weight: 500;
-		}
-
-		.summary .total .total_price {
-			font-size: 1.2em;
-		}
-		/* HOT_DEALS LANDING PAGE */
-		.additional_inf_lp {
-		 display: grid;
-         grid-template-columns: 30% 70%;
-		 margin-top: 70px;
-		}
-		.summary .specifications .spec_grid p {
-			margin-block-start: 0.8em;
-			margin-block-end: 0.8em;
-		}
-		.additional_inf_lp .summary .stick_wrapper{
-			position: sticky;
-			position: -webkit-sticky;
-			top: 0;	
-		}
-		.additional_inf_lp .adress_form {
-			width: 100%;
-			height: auto;
-		}
-		.form_grid {
-			grid-column-gap: 50px;
-		}
-
-		.additional_information .select-selected:after {
-			right: 30px;
-		}
-		.additional_information .weight,
-		.additional_information .barcode,
-		.additional_information .sticker,
-		.additional_information .additional_inf_amount {
-			padding-bottom: 10px;
-			width: 85%;
-		}
-		.additional_information .music_online {
-			padding-bottom: 10px;
-			width: 85%;
-		}
-
-		.additional_information .confirm_button {
-			margin-left: 50%;
-		}
-		/* adress form */
-		#step3,
-		#form_grid {
-
-		}
-
-		#form_grid legend {
-			padding-top: 10%;
-		}
-
-		.wrapper_required {
-			display: grid;
-			grid-template-columns: 95% 5%;
-			width: 290px;
-		}
-		form select,
-		form fieldset > div input {
-			min-width: 300px;
-			max-width: 300px;
-		}
-
-		form fieldset {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			width: 100%;
-			margin: 0 35px;
-
-		}
-		form fieldset > div {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			padding-bottom: 10px;
-			margin: 0;
-			justify-content: start;
-			grid-row-gap: 13px;
-
-
-		}
-		.form_grid {
-			margin-left: 0;
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-		}
-
-		form fieldset > div {
-			display: grid;
-			grid-template-columns: 50% 50%;
-			width: 100vw;
-		}
-		form fieldset > div {
-			display: grid;
-			grid-template-columns: 1fr;
-			padding-bottom: 10px;
-			margin: 0;
-			justify-content: start;
-			width: 300px;
-			grid-row-gap: 13px;
-		}
-		form div input:valid:not(:placeholder-shown) ~ .correct::after {
-			right: 0;
-		}
-		form textarea {
-			width: 220%;
-		}
-		#step3 {
-			padding-top: 10%;
-		}
-		#step3 img {
-			width: 100%;
-			margin: 15% 0;
-		}
 	}
 
-	@media (min-width: 1200px) {
-
-		/* TOP HEADER */
-		.header {
-			grid-template-columns: 10vw 59vw 10vw 3vw 2vw 3vw;
-			position: fixed;
-
-		}
-		.header .logo {
-			background: url(images/dicentia_logo.png) center no-repeat;
-			background-size: contain;
-			justify-self: center;
-			order: 1;
-			width: 10vw;
-			height: 1vw;
-			padding: 21px 0 0 0;
-		}
-		.header .hamburger {
-			width: 60vw;
-		}
-
-		.header .menu {
-			float: right;
-		}
-		.header .search,
-		.header p,
-		.header .mail {
-			padding-top: 7px;
-		}
-		.header .contact_us_button {
-			margin-left: 28px;
-			margin-top: 2px;
-		}
-		.header li a {
-			font-size: 0.8rem;
-		}
-		.header .search {
-			margin-top: 4px;
-		}
-
-		/* SUBHEADER */
-		.subheader {
-			display: block;
-			width: 100vw;
-			height: 50px;
-			background-color: black;
-			color: #fff;
-			display: grid;
-			grid-template-columns: 20vw 80vw;
-			z-index: 4;
-			position: fixed;
-			top: 69px;
-
-		}
-		.subheader h3 {
-			margin: 0;
-			font-size: 0.8rem;
-			font-family: "Roboto", sans-serif;
-			text-decoration: underline;
-			justify-self: center;
-			align-self: center;
-		}
-		.subheader .submenu {
-			justify-self: left;
-
-		}
-		.subheader .submenu li a {
-			color: white;
-			font-size: 0.8rem;
-			font-family: "Poppins", sans-serif;
-			text-decoration: none;
-			padding: 0 55px;
-
-		}
-		.subheader .submenu li:nth-child(1) {
-			font-weight: 600;
-		}
-		.subheader .submenu li:hover {
-			font-weight: 600;
-			border-bottom: 3px solid #EB5D1B;
-			padding: 13px 0;
-
-		}
-
-
-		.subheader .submenu li {
-			display: inline;
-		}
-
-		/* landing page vinyl hot deals slideshow */
-		.section_1 .color {
-			margin-top: 25px;
-		}
-
-		.hot_deals_grid {
-			height: 70vh;
-		}
-		#hot_deals_slideshow .hot_deals_grid .desc {
-			order: 1;
-			align-self: center;
-
-		}
-		#hot_deals_slideshow .hot_deals_grid img {
-			max-height: 420px;
-		}
-		#hot_deals_slideshow p {
-			width: 80%;
-		}
-
-		.button_2_col .buy {
-			z-index: 2;
-
-		}
-		.position {
-			position: fixed;
-		}
-		/* parallax */
-		.needle {
-			top: 5%;
-
-		}
-		.vinyl_plate {
-			background: url("images/vinyl_plate.png") center no-repeat;
-			width: 100%;
-			height: 140vh;
-			animation: rotate 3s infinite linear;
-			background-size: cover;
-			overflow-y: scroll;
-
-		}
-
-		@keyframes rotate {
-			from {
-				transform: rotate(0deg);
-			}
-			to {
-				transform: rotate(360deg);
-			}
-		}
-
-		.customize_vinyl {
-			height: auto;
-			margin: 0 auto;
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			width: 90%;
-		}
-
-
-		/* footer */
-		footer .logo_footer {
-			width: 180px;
-
-		}
-		button {
-			font-size: 0.8em;
-		}
-		.contact_us_footer .mail,
-		.contact_us_footer .phone {
-			;
-			padding-top: 0;
-		}
-
-		/* hot deals landing page */
-		forms {
-			width: 70%;
-		}
-		form fieldset {
-			width: 80%;
-			margin: 0;
-			padding-left: 60px;
-		}
-		form div input:valid:not(:placeholder-shown) ~ .correct::after {
-			right: 58px;
-		}
-		.additional_inf_lp {
-        margin-top: 118px;
 }
+
+@media (min-width: 1024px) {
+
+	.header {
+		grid-template-columns: 3vw 65vw 10vw 9vw 5vw 6vw;
+		padding: 20px 20px 0px 20px;
+		width: 100vw;
+		height: 51px;
+		background-color: white;
 	}
-	@media (min-width: 1400px) {
-		.header {
-			grid-template-columns: 8vw 60vw 10vw 5vw 5vw 5vw;
-		}
-		.header li a {
-			font-size: 0.85rem;
-		}
-		.header {
-			padding-left: 5vw;
-		}
-		.header li a {
-			padding: 8px 20px 18px;
-		}
-		button {
-			font-size: 0.85rem;
-			height: 5vh;
+	.relative-header {
+		position: absolute;
+		top: 0;
+	}
+	.subheader {
+		z-index: 3 !important;
+	}
+	.header .contact_us_button,
+	.header .mail,
+	.header p {
+		display: block;
+	}
+	.header .logo {
+		height: 28px;
+		justify-self: left;
+		width: 3vw;
+	}
 
-		}
-		.form_grid {
-			width: 100%;
-		}
-		form select,
-		form fieldset > div input {
-			max-width: 300px;
-			min-width: 300px;
-		}
-		form_grid legend {
-			padding-top: 4%;
-		}
-		/*section 1 */
-		.hot_deals_slideshow {
-			height: 60vh;
-			padding-top: 150px;
-		}
+	.header .hamburger {
+		order: 2;
+	}
 
-		.section_1 .color {
-			margin-top: 30px;
-		}
-		#hot_deals_slideshow .hot_deals_grid .desc {
-			padding-left: 70px;
-		}
+	.header .contact_us_button {
+		order: 3;
+	}
+	.header .search {
+		order: 4;
+		padding: 4px 0 0 0;
+	}
+	.header p {
+		order: 5;
+		justify-self: right;
+		align-self: start;
+		margin-block-start: 0;
+	}
+	.header .mail {
+		order: 6;
+		justify-self: center;
+	}
+	.header li a {
+		font-size: 0.9em;
+		font-family: "Poppins", sans-serif;
+		font-style: normal;
+		border-right: none;
+		padding: 6px 4px 20px 20px;
+	}
 
-		/* footer */
-		footer {
-			position: relative;
-		}
 
-		footer .logo_footer {
-			background: url('images/logo_dicentia_white.png') no-repeat;
-			width: 170px;
-			height: 35px;
-			background-size: contain;
-			justify-self: right;
+	.Highlight {
+		grid-template-columns: 25% 75%;
+	}
+	.header li {
+		float: left;
+	}
 
-		}
-		footer .contact_us_footer {
-			position: absolute;
-			float: right;
-			right: 0px;
-			top: 70px;
-			border-left: 1px solid #707070;
-			width: 20%;
-			
-		}
+	.header .menu {
+		clear: none;
+		float: left;
+		max-height: none;
+	}
+	.header .menu-icon {
+		display: none;
+	}
+	/* landing page vinyl hot deals slideshow */
+	.section_1 .color {
+		background-color: #f6f6f6;
+		margin-top: 8px;
+		position: absolute;
+		width: 50%;
+		height: 100%;
+		display: block;
+		top: 60px;
+		left: 50%;
+		z-index: 1;
 
-		footer .menu_footer {
-			grid-template-columns: 10% 5% 10% 5% 10% 5% 10% 5% 10% 5% 10% 5%;
-			width: 80%;
-		}
+	}
 
-		.contact_us_footer .mail,
-		.contact_us_footer .phone {
-			grid-template-columns: 35% 65%;
-		}
+	#hot_deals_slideshow {
+		grid-template-columns: 1fr;
+		padding-top: 100px;
+	}
+	.hot_deals_grid {
+		order: 1;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 
-		footer .social_media .fb {
-			width: 35px;
-		}
-		footer .social_media .linkedin {
-			width: 34px;
-		}
-		footer .social_media .fb:hover {
-			width: 35px;
-		}
-		footer .social_media .linkedin:hover {
-			width: 34px;
-		}
-		/* hot deals lp*/
-		.summary h6 {
-			font-size: 0.95em;
-			font-weight: 700;
-		}
-		.summary p {
-			margin-block-start: 0.7em;
-			margin-block-end: 0.7em;
-		}
-		.summary_header {
-			padding-top: 20px;
-			padding-bottom: 20px;
-		}
-		.additional_information {
-			padding: 50px;
-		}
-		.summary .specifications .spec_grid p {
-			margin-block-start: 0.6em;
-			margin-block-end: 0.6em;
-		}
-		form div input:valid:not(:placeholder-shown) ~ .correct::after {
+	}
+	#hot_deals_slideshow .hot_deals_grid .desc {
+		order: 1;
+	}
+	#hot_deals_slideshow img {
+		width: 100%;
+		order: 2;
+		z-index: 2;
+	}
+	#hot_deals_slideshow h5 {
+		font-size: 1em;
+	}
+	#hot_deals_slideshow h1 {
+		font-size: 2.5em;
+	}
+	#hot_deals_slideshow p {
+		font-family: "Roboto", sans-serif;
+		font-size: 1.1em;
+		margin-block-start: 0;
+		margin-block-end: 0;
+		width: 90%;
+	}
+	.button_2_col {
+		width: 30%;
+		margin: 0 auto;
+		order: 3;
+		grid-column: 1/span 2
+	}
+	.usp {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		z-index: 10;
+		position: relative;
+	}
+	.usp .usp_4,
+	.usp .usp_3,
+	.usp .usp_2,
+	.usp .usp_1 {
+		grid-column-gap: 8px;
+	}
+	.usp .usp_4 p,
+	.usp .usp_3 p,
+	.usp .usp_2 p,
+	.usp .usp_1 p {
+		font-size: 0.8em;
+	}
 
-			right: 0;
+	/* section 2 */
+	.section_2 {
+		padding-top: 25px;
+	}
+	.needle {
+		background: url(images/needle.png) center no-repeat;
+		top: 0;
+	}
+	.vinyl_plate {
+		height: 115vh;
+	}
+
+
+	/* footer */
+	.footer {
+		z-index: 3;
+	}
+	footer .logo_footer {
+		background: url('images/logo_dicentia_white.png') no-repeat;
+		width: 170px;
+		height: 35px;
+		background-size: contain;
+		justify-self: right;
+
+	}
+
+	footer .menu_footer {
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		padding-bottom: 15px;
+	}
+
+	.contact_us_footer .mail,
+	.contact_us_footer .phone {
+		grid-template-columns: 45% 55%;
+		grid-column-gap: 10px;
+		padding-top: 15px;
+	}
+
+	footer .social_media .fb {
+		width: 40px;
+	}
+	footer .social_media .linkedin {
+		width: 38px;
+	}
+	footer .social_media .fb:hover {
+		width: 40px;
+	}
+	footer .social_media .linkedin:hover {
+		width: 38px;
+	}
+
+	/* HOT_DEALS LANDING PAGE */
+	.summary .summary_header {
+		grid-template-columns: 15% 75%;
+		grid-column-gap: 0;
+		padding-left: 10px;
+		padding-top: 15px;
+	}
+	.summary .summary_header img {
+		width: 55%;
+		height: auto;
+	}
+	.summary .summary_header h4 {
+		font-size: 0.85em;
+		margin-block-end: 0.5em;
+	}
+
+	.summary h6 {
+		font-size: 0.9em;
+	}
+	.codes,
+	.amount,
+	.specification_header {
+		font-weight: 500;
+	}
+
+	.summary .total .total_price {
+		font-size: 1.2em;
+	}
+	/* HOT_DEALS LANDING PAGE */
+	.additional_inf_lp {
+		display: grid;
+		grid-template-columns: 30% 70%;
+		margin-top: 70px;
+	}
+	.summary .specifications .spec_grid p {
+		margin-block-start: 0.8em;
+		margin-block-end: 0.8em;
+	}
+	.additional_inf_lp .summary .stick_wrapper {
+		position: sticky;
+		position: -webkit-sticky;
+		top: 0;
+	}
+	.additional_inf_lp .adress_form {
+		width: 100%;
+		height: auto;
+	}
+	.form_grid {
+		grid-column-gap: 50px;
+	}
+
+	.additional_information .select-selected:after {
+		right: 30px;
+	}
+	.additional_information .weight,
+	.additional_information .barcode,
+	.additional_information .sticker,
+	.additional_information .additional_inf_amount {
+		padding-bottom: 10px;
+		width: 85%;
+	}
+	.additional_information .music_online {
+		padding-bottom: 10px;
+		width: 85%;
+	}
+
+	.additional_information .confirm_button {
+		margin-left: 50%;
+	}
+	/* adress form */
+	#step3,
+	#form_grid {}
+
+	#form_grid legend {
+		padding-top: 10%;
+	}
+
+	.wrapper_required {
+		display: grid;
+		grid-template-columns: 95% 5%;
+		width: 290px;
+	}
+	form select,
+	form fieldset > div input {
+		min-width: 300px;
+		max-width: 300px;
+	}
+
+	form fieldset {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		width: 100%;
+		margin: 0 35px;
+
+	}
+	form fieldset > div {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		padding-bottom: 10px;
+		margin: 0;
+		justify-content: start;
+		grid-row-gap: 13px;
+
+
+	}
+	.form_grid {
+		margin-left: 0;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	form fieldset > div {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		width: 100vw;
+	}
+	form fieldset > div {
+		display: grid;
+		grid-template-columns: 1fr;
+		padding-bottom: 10px;
+		margin: 0;
+		justify-content: start;
+		width: 300px;
+		grid-row-gap: 13px;
+	}
+	form div input:valid:not(:placeholder-shown) ~ .correct::after {
+		right: 0;
+	}
+	form textarea {
+		width: 220%;
+	}
+	#step3 {
+		padding-top: 10%;
+	}
+	#step3 img {
+		width: 100%;
+		margin: 15% 0;
+	}
+	.step_1_questions {
+		width: 100%;
+		margin: 0 auto;
+		margin-top: 71px;
+
+	}
+
+}
+
+@media (min-width: 1200px) {
+
+	/* TOP HEADER */
+	.header {
+		grid-template-columns: 10vw 59vw 10vw 3vw 2vw 3vw;
+		position: fixed;
+
+	}
+	.header .logo {
+		background: url(images/dicentia_logo.png) center no-repeat;
+		background-size: contain;
+		justify-self: center;
+		order: 1;
+		width: 10vw;
+		height: 1vw;
+		padding: 21px 0 0 0;
+	}
+	.header .hamburger {
+		width: 60vw;
+	}
+
+	.header .menu {
+		float: right;
+	}
+	.header .search,
+	.header p,
+	.header .mail {
+		padding-top: 7px;
+	}
+	.header .contact_us_button {
+		margin-left: 28px;
+		margin-top: 2px;
+	}
+	.header li a {
+		font-size: 0.8rem;
+	}
+	.header .search {
+		margin-top: 4px;
+	}
+
+	/* SUBHEADER */
+	.subheader {
+		display: block;
+		width: 100vw;
+		height: 50px;
+		background-color: black;
+		color: #fff;
+		display: grid;
+		grid-template-columns: 20vw 80vw;
+		z-index: 4;
+		position: fixed;
+		top: 69px;
+
+	}
+	.subheader h3 {
+		margin: 0;
+		font-size: 0.8rem;
+		font-family: "Roboto", sans-serif;
+		text-decoration: underline;
+		justify-self: center;
+		align-self: center;
+	}
+	.subheader .submenu {
+		justify-self: left;
+
+	}
+	.subheader .submenu li a {
+		color: white;
+		font-size: 0.8rem;
+		font-family: "Poppins", sans-serif;
+		text-decoration: none;
+		padding: 0 55px;
+
+	}
+	.subheader .submenu li:nth-child(1) {
+		font-weight: 600;
+	}
+	.subheader .submenu li:hover {
+		font-weight: 600;
+		border-bottom: 3px solid #EB5D1B;
+		padding: 13px 0;
+
+	}
+
+
+	.subheader .submenu li {
+		display: inline;
+	}
+
+	/* landing page vinyl hot deals slideshow */
+	.section_1 .color {
+		margin-top: 25px;
+	}
+
+	.hot_deals_grid {
+		height: 70vh;
+	}
+	#hot_deals_slideshow .hot_deals_grid .desc {
+		order: 1;
+		align-self: center;
+
+	}
+	#hot_deals_slideshow .hot_deals_grid img {
+		max-height: 420px;
+	}
+	#hot_deals_slideshow p {
+		width: 80%;
+	}
+
+	.button_2_col .buy {
+		z-index: 2;
+
+	}
+	.position {
+		position: fixed;
+	}
+	/* parallax */
+	.needle {
+		top: 5%;
+
+	}
+	.vinyl_plate {
+		background: url("images/vinyl_plate.png") center no-repeat;
+		width: 100%;
+		height: 140vh;
+		animation: rotate 3s infinite linear;
+		background-size: cover;
+		overflow-y: scroll;
+
+	}
+
+	@keyframes rotate {
+		from {
+			transform: rotate(0deg);
 		}
-		#step3 h4 {
-			margin-block-end: 0;
+		to {
+			transform: rotate(360deg);
 		}
-		#step3 img {
-			width: 80%;
-			margin: 5% 10%;
-		}
+	}
+
+	.customize_vinyl {
+		height: auto;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		width: 90%;
+	}
+
+
+	/* footer */
+	footer .logo_footer {
+		width: 180px;
+
+	}
+	button {
+		font-size: 0.8em;
+	}
+	.contact_us_footer .mail,
+	.contact_us_footer .phone {
+		;
+		padding-top: 0;
+	}
+
+	/* hot deals landing page */
+	forms {
+		width: 70%;
+	}
+	form fieldset {
+		width: 80%;
+		margin: 0;
+		padding-left: 60px;
+	}
+	form div input:valid:not(:placeholder-shown) ~ .correct::after {
+		right: 58px;
+	}
+	.additional_inf_lp {
+		margin-top: 118px;
+	}
+	/* CUSTOMIZE YOUR VINYL - CUSTOMIZE.HTML STYLE */
+	.configurator-wrapper {
+		display: grid;
+		grid-template-columns: 35% 65%;
+		margin-top: 120px;
+	}
+	.step_1_questions .q8 textarea {
+		width: 100%;
+		margin-left: 1px;
+	}
+	.step_1_questions .step_continue_button {
+		margin-right: 10%;
+		text-align: right;
+
+	}
+	.step_1_questions {
+
+		margin-top: 0;
+
+	}
+	.step_1_questions .q1 .vinyl_amounts_slider {
+		grid-template-columns: 18% 19% 18% 19% 18% 19%;
+	}
+}
+
+@media (min-width: 1400px) {
+	.header {
+		grid-template-columns: 8vw 60vw 10vw 5vw 5vw 5vw;
+	}
+	.header li a {
+		font-size: 0.85rem;
+	}
+	.header {
+		padding-left: 5vw;
+	}
+	.header li a {
+		padding: 8px 20px 18px;
+	}
+	button {
+		font-size: 0.85rem;
+		height: 5vh;
+
+	}
+	.form_grid {
+		width: 100%;
+	}
+	form select,
+	form fieldset > div input {
+		max-width: 300px;
+		min-width: 300px;
+	}
+	form_grid legend {
+		padding-top: 4%;
+	}
+	/*section 1 */
+	.hot_deals_slideshow {
+		height: 60vh;
+		padding-top: 150px;
+	}
+
+	.section_1 .color {
+		margin-top: 30px;
+	}
+	#hot_deals_slideshow .hot_deals_grid .desc {
+		padding-left: 70px;
+	}
+
+	/* footer */
+	footer {
+		position: relative;
+	}
+
+	footer .logo_footer {
+		background: url('images/logo_dicentia_white.png') no-repeat;
+		width: 170px;
+		height: 35px;
+		background-size: contain;
+		justify-self: right;
+
+	}
+	footer .contact_us_footer {
+		position: absolute;
+		float: right;
+		right: 0px;
+		top: 70px;
+		border-left: 1px solid #707070;
+		width: 20%;
+
+	}
+
+	footer .menu_footer {
+		grid-template-columns: 10% 5% 10% 5% 10% 5% 10% 5% 10% 5% 10% 5%;
+		width: 80%;
+	}
+
+	.contact_us_footer .mail,
+	.contact_us_footer .phone {
+		grid-template-columns: 35% 65%;
+	}
+
+	footer .social_media .fb {
+		width: 35px;
+	}
+	footer .social_media .linkedin {
+		width: 34px;
+	}
+	footer .social_media .fb:hover {
+		width: 35px;
+	}
+	footer .social_media .linkedin:hover {
+		width: 34px;
+	}
+	/* hot deals lp*/
+	.summary h6 {
+		font-size: 0.95em;
+		font-weight: 700;
+	}
+	.summary p {
+		margin-block-start: 0.7em;
+		margin-block-end: 0.7em;
+	}
+	.summary_header {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	.additional_information {
+		padding: 50px;
+	}
+	.summary .specifications .spec_grid p {
+		margin-block-start: 0.6em;
+		margin-block-end: 0.6em;
+	}
+	form div input:valid:not(:placeholder-shown) ~ .correct::after {
+
+		right: 0;
+	}
+	#step3 h4 {
+		margin-block-end: 0;
+	}
+	#step3 img {
+		width: 80%;
+		margin: 5% 10%;
+	}
+	.configurator-wrapper {
+		display: grid;
+		grid-template-columns: 30% 70%;
+		margin-top: 118px;
+	}
+	.step_1_questions .q1 .vinyl_amounts_slider {
+		grid-template-columns: 19% 19% 18% 20% 19% 19%;
 	}
 
 	@media (min-width: 1800px) {
