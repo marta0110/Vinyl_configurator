@@ -78,7 +78,6 @@
 					<p>1250</p>
 					<p>1500</p>
 				</div>
-				<p><span id="value"></span></p>
 			</div>
 			<div class="q2">
 				<p>Choose your Vinyl Size</p>
@@ -104,7 +103,7 @@
 			<div class="engravement">
 				<p>Please type your engravement:</p>
 				<div class="engravement_input">
-					<input type="text" id="engravement" name="engravement" placeholder="What would you like to write?" minlength="3" required maxlength="30">
+					<input onmouseout="addengravementText()" type="text" id="engravement" name="engravement" placeholder="What would you like to write?" minlength="3" required maxlength="30">
 					<span class="correct"></span>
 				</div>
 			</div>
@@ -113,12 +112,12 @@
 				<div class="yes-or-no-option-container">
 					<div class="yes-or-no-option yes-container-weight">
 						<input type="radio" id="Yes-option-weight" name="group2">
-						<label for="Yes-option-weight">Yes</label>
+						<label class="yes_weight_upgrade" for="Yes-option-weight">Yes</label>
 					</div>
 
 					<div class="yes-or-no-option no-container-weight">
 						<input type="radio" id="No-option-weight" name="group2">
-						<label for="No-option-weight">No</label>
+						<label class="no_weight_upgrade" for="No-option-weight">No</label>
 					</div>
 				</div>
 			</div>
@@ -176,7 +175,9 @@
 			</div>
 
 		</div>
+		<div class="live_preview_wrapper">
 		<div class="live_preview">
+		
 			<div class="summary">
 				<img src="images/summary-icon.png" alt="summary_icon">
 				<h3> Summary</h3>
@@ -184,38 +185,40 @@
 
 			<div class="technical_specifications">
 				<div class="amount">
-					<h2> 250</h2>
+					<h2 class="vinyl_amount_order">250</h2>
 					<p>amount</p>
 				</div>
 				<div class="weight">
-					<h2> 140</h2>
+					<h2 class="vinyl_weight">140</h2>
 					<p>weight</p>
 				</div>
 				<div class="rpm">
-					<h2> 33</h2>
+					<h2 class="rpm_tempo">33</h2>
 					<p>rpm</p>
 				</div>
 			</div>
+			
 			<div class="vinyl_preview_image">
-				<img src="images/vinyl.png" alt="vinyl">
+				<img class="vinyl_image" src="images/vinyl.png" alt="vinyl">
 			</div>
+			
 			<div class="headline">
-				<h1> Standard 12"</h1>
+				<h1 class="headline_vinyl_size"> Standard 12"</h1>
 			</div>
+			
 			<div class="specification_description">
 				<h4>Specifications</h4>
-				<p>Cutting + Stamper Set, Black 12″ Records 140gr High Quality Vinyl White Unprinted Labels White 90gr Inner Sleeve No Outer Sleeve </p>
+				<p class="specification_description_text">Cutting + Stamper Set, High Quality Vinyl <br>90gr Inner Sleeve, 3mm Spine <br></p>
 			</div>
+			
 			<div class="price">
 				<p> Price</p>
 				<h3> 14.590 dkk</h3>
 			</div>
+			
 		</div>
 	</div>
-
-
-
-
+	</div>
 
 
 	<footer class="footer">
