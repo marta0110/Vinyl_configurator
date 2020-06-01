@@ -49,6 +49,15 @@ let specificationText = document.querySelector(".specification_description_text"
 let ShowengravementText = engravementText.value;
 	specificationText.innerHTML += ShowengravementText
 	console.log(ShowengravementText);
+
+	
+	/* working on delete text on engravement*/
+engravementText.onkeydown = function deleteText() {
+    let key = event.keyCode || event.charCode;
+
+    if( key == 8 || key == 46 )
+       alert("DELETE IS ON")
+};
 }
 
 
