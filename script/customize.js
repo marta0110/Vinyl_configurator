@@ -43,30 +43,28 @@ function addImgTwelve() {
 }
 
 /* extra engravement */
-function addengravementText(){	
-let engravementText = document.querySelector("#engravement");
-let specificationText = document.querySelector(".specification_description_text");
-let ShowengravementText = engravementText.value;
+function addengravementText() {
+	let engravementText = document.querySelector("#engravement");
+	let specificationText = document.querySelector(".specification_description_text");
+	let ShowengravementText = engravementText.value;
 	specificationText.innerHTML += ShowengravementText
 	console.log(ShowengravementText);
 
-	
+
 	/* working on delete text on engravement*/
-engravementText.onkeydown = function deleteText() {
-    let key = event.keyCode || event.charCode;
-
-    if( key == 8 || key == 46 )
-       alert("DELETE IS ON")
-};
+	engravementText.onkeydown = function deleteText() {
+		let key = event.keyCode || event.charCode;
+		if (key == 8 || key == 46)
+			alert("DELETE IS ON")
+	}
 }
-
 
 /* weight upgrade */
 
 let vinylWeight = document.querySelector(".vinyl_weight");
 let weightYes = document.querySelector(".yes_weight_upgrade");
 let weightNo = document.querySelector(".no_weight_upgrade");
-										 
+
 weightYes.addEventListener("click", UpgradeWeight)
 weightNo.addEventListener("click", StandardWeight)
 
@@ -78,7 +76,71 @@ function StandardWeight() {
 	vinylWeight.innerHTML = "140";
 }
 
+/* Vinyl color change */
+let VinylColorOne = document.querySelector(".color_one")
+let VinylColorTwo = document.querySelector(".color_two")
+let VinylColorThree = document.querySelector(".color_three")
+let VinylColorFour = document.querySelector(".color_four")
+let VinylColorFive = document.querySelector(".color_five")
+let VinylColorSix = document.querySelector(".color_six")
+let VinylColorSeven = document.querySelector(".color_seven")
+let VinylColorEight = document.querySelector(".color_eight")
+let VinylColorNine = document.querySelector(".color_nine")
+let VinylColorTen = document.querySelector(".color_ten")
+let VinylColorEleven = document.querySelector(".color_eleven")
+let VinylColorTvelwe = document.querySelector(".color_tvelwe")
 
+VinylColorOne.addEventListener("click", ChangeVinylImageOne)
+VinylColorTwo.addEventListener("click", ChangeVinylImageTwo)
+VinylColorThree.addEventListener("click", ChangeVinylImageThree)
+VinylColorFour.addEventListener("click", ChangeVinylImageFour)
+VinylColorFive.addEventListener("click", ChangeVinylImageFive)
+VinylColorSix.addEventListener("click", ChangeVinylImageSix)
+VinylColorSeven.addEventListener("click", ChangeVinylImageSeven)
+VinylColorEight.addEventListener("click", ChangeVinylImageEight)
+VinylColorNine.addEventListener("click", ChangeVinylImageNine)
+VinylColorTen.addEventListener("click", ChangeVinylImageTen)
+VinylColorEleven.addEventListener("click", ChangeVinylImageEleven)
+VinylColorTvelwe.addEventListener("click", ChangeVinylImageTvelwe)
+
+function ChangeVinylImageOne(){
+vinylImage.setAttribute('src', 'images/vinyl.png');
+	// VinylColorOne.style.backgroundColor = "#D3DBDA";
+}
+
+function ChangeVinylImageTwo(){
+vinylImage.setAttribute('src', 'images/vinyl_plate2.png');
+}
+function ChangeVinylImageThree(){
+vinylImage.setAttribute('src', 'images/color3.png');
+}
+function ChangeVinylImageFour(){
+vinylImage.setAttribute('src', 'images/color4.png');
+}
+function ChangeVinylImageFive(){
+vinylImage.setAttribute('src', 'images/color5.png');
+}
+function ChangeVinylImageSix(){
+vinylImage.setAttribute('src', 'images/color6.png');
+}
+function ChangeVinylImageSeven(){
+vinylImage.setAttribute('src', 'images/color7.png');
+}
+function ChangeVinylImageEight(){
+vinylImage.setAttribute('src', 'images/color8.png');
+}
+function ChangeVinylImageNine(){
+vinylImage.setAttribute('src', 'images/color9.png');
+}
+function ChangeVinylImageTen(){
+vinylImage.setAttribute('src', 'images/color10.png');
+}
+function ChangeVinylImageEleven(){
+vinylImage.setAttribute('src', 'images/color11.png');
+}
+function ChangeVinylImageTvelwe(){
+vinylImage.setAttribute('src', 'images/color12.png');
+}
 
 /* radio buttons on click leave active */
 let activeYesBox = document.querySelector(".yes-container");
