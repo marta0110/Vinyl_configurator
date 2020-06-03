@@ -1562,6 +1562,7 @@ form fieldset button {
 .configurator-wrapper .live_preview h2 {
 	align-self: end;
 	margin-block-end: 0;
+	    margin-block-start: 0;
 }
 
 .configurator-wrapper .live_preview h2 {
@@ -1572,6 +1573,7 @@ form fieldset button {
 .configurator-wrapper .live_preview .technical_specifications p,
 .configurator-wrapper .live_preview .specification_description p {
 	margin-block-start: 0;
+		margin-block-end: 2.2em;
 }
 
 .configurator-wrapper .live_preview .technical_specifications p {
@@ -2325,6 +2327,7 @@ form fieldset button {
 	.step_1_questions .step_continue_button {
 		margin-right: 10%;
 		text-align: right;
+		cursor: pointer;
 
 	}
 	.step_1_questions {

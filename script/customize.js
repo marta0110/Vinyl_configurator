@@ -28,7 +28,7 @@ function addImgSeven() {
 	seven.style.backgroundImage = "url('css/images/7_hovered.png')";
 	twelve.style.backgroundImage = "url('css/images/12_nothovered.png')";
 	vinylImage.setAttribute('src', 'images/vinyl_7.png');
-	vinylImage.style.padding = "70px 0";
+	vinylImage.style.padding = "80px 0";
 	vinylSizeHeadline.innerHTML = "Single 7''";
 	rpm.innerHTML = "45"
 }
@@ -43,11 +43,13 @@ function addImgTwelve() {
 }
 
 /* extra engravement */
+let SpecificationDescriptionText = document.querySelector("#specification_description_text").textContent;
+
 function addengravementText() {
 	let engravementText = document.querySelector("#engravement");
 	let specificationText = document.querySelector(".specification_description_text");
 	let ShowengravementText = engravementText.value;
-	specificationText.innerHTML += ShowengravementText
+	specificationText.innerHTML = SpecificationDescriptionText  + "Engravement:" + ShowengravementText
 	console.log(ShowengravementText);
 
 
@@ -55,7 +57,8 @@ function addengravementText() {
 	engravementText.onkeydown = function deleteText() {
 		let key = event.keyCode || event.charCode;
 		if (key == 8 || key == 46)
-			alert("DELETE IS ON")
+		specificationText.innerHTML = SpecificationDescriptionText + "Engravement: None";
+		console.log(SpecificationDescriptionText)
 	}
 }
 
