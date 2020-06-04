@@ -116,7 +116,6 @@ function closeAllSelect(elmnt) {
 // PRICE ACTUALIZATION  + ACTIVE BOXES//
 function addline() {
 	let element = document.querySelector(".custom-select-amount")
-	let elementFinish = document.querySelector(".custom-select-finish")
 	let price = document.querySelector(".additional_inf_price")
 	let text = document.querySelector(".text")
 	let PriceChange = document.querySelector(".var_price")
@@ -125,12 +124,22 @@ function addline() {
 	let MyList = document.getElementById("mySelect").value;
 	let MyFinish = document.getElementById("myFinish").value;
 	let Sticker = document.querySelector("#sticker");
+	let Barcode = document.querySelector("#barcode");
+	let Weight = document.querySelector("#weight");
+	let SummaryAmount = document.querySelector(".amount")
+	let PackagePrice = document.querySelector(".package_price")
 
-
-	//elementFinish.style.borderBottom = "4px solid #000";
 	element.style.borderBottom = "4px solid #000";
 	price.style.paddingBottom = "20px";
 	text.style.paddingBottom = "3px";
+	
+	if (MyList == 1) {
+		PriceChange.innerHTML = "0dkk";
+
+		showPrice = +FixedPrice;
+		console.log(showPrice);
+		totalPrice.innerHTML = showPrice.toLocaleString() + " dkk"
+	}
 
 	if (MyList == 2) {
 		PriceChange.innerHTML = "250dkk";
@@ -138,12 +147,16 @@ function addline() {
 		showPrice = +FixedPrice + +250;
 		console.log(showPrice);
 		totalPrice.innerHTML = showPrice.toLocaleString() + " dkk"
+		SummaryAmount.innerHTML = "500 x 12’’ Records"
+		PackagePrice.innerHTML = "10.750 dkk"
 	} else if (MyList == 3) {
 		PriceChange.innerHTML = "350dkk"
 
 		showPrice = +FixedPrice + +350;
 		console.log(showPrice);
 		totalPrice.innerHTML = showPrice.toLocaleString() + " dkk"
+		SummaryAmount.innerHTML = "1000 x 12’’ Records"
+		PackagePrice.innerHTML = "10.850 dkk"
 
 
 	} else if (MyList == 4) {
@@ -152,6 +165,8 @@ function addline() {
 		showPrice = +FixedPrice + +420;
 		console.log(showPrice);
 		totalPrice.innerHTML = showPrice.toLocaleString() + " dkk"
+		SummaryAmount.innerHTML = "1000 x 12’’ Records"
+		PackagePrice.innerHTML = "10.950 dkk"
 
 	} else if (MyList == 5) {
 		PriceChange.innerHTML = "500dkk"
@@ -167,44 +182,71 @@ function addline() {
 	if (MyFinish == 1) {
 		PriceChangeFinish.innerHTML = "1500dkk"
 
-		let NewPrice = +showPrice + +1500;
+	    NewPrice = +showPrice + +1500;
 		console.log(NewPrice);
 		totalPrice.innerHTML = NewPrice.toLocaleString() + " dkk"
 
 	} else if (MyFinish == 2) {
 		PriceChangeFinish.innerHTML = "3000dkk"
 
-		let NewPrice = +showPrice + +3000;
+		NewPrice = +showPrice + +3000;
 		console.log(NewPrice);
 		totalPrice.innerHTML = NewPrice.toLocaleString() + " dkk"
 
 	} else if (MyFinish == 3) {
 		PriceChangeFinish.innerHTML = "500dkk"
 
-		let NewPrice = +showPrice + +500;
+		NewPrice = +showPrice + +500;
 		console.log(NewPrice);
 		totalPrice.innerHTML = NewPrice.toLocaleString() + " dkk"
 
 	} else if (MyFinish == 4) {
 		PriceChangeFinish.innerHTML = "600dkk"
 
-		let NewPrice = +showPrice + +600;
+		NewPrice = +showPrice + +600;
 		console.log(NewPrice);
 		totalPrice.innerHTML = NewPrice.toLocaleString() + " dkk"
 
 	}
 	
-/*	if(Sticker.checked == true){
-		let StickerNewPrice = +showPrice + +350;
+	if(Sticker.checked == true){
+		StickerNewPrice = +NewPrice + +350;
 		console.log(StickerNewPrice);
 		totalPrice.innerHTML = StickerNewPrice.toLocaleString() + " dkk"
 	}
-	*/
-
+		if(Barcode.checked == true){
+		BarcodeNewPrice = +StickerNewPrice + +255;
+		console.log(StickerNewPrice);
+		totalPrice.innerHTML = BarcodeNewPrice.toLocaleString() + " dkk"
+	}
+		if(Weight.checked == true){
+		WeightNewPrice = +BarcodeNewPrice + +200;
+		console.log(StickerNewPrice);
+		totalPrice.innerHTML = WeightNewPrice.toLocaleString() + " dkk"
+	}
 }
 
+/*add a bottom border to finish dropdown list*/
+
+function addBorder(){
+	let elementFinish = document.querySelector(".custom-select-finish")
+	elementFinish.style.borderBottom = "4px solid #000";
+}
+	
 
 /*if the user clicks anywhere outside the select box,
 then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
 document.addEventListener("click", addline);
+
+// local storage e-mail adress to confirmation//
+function saveData(){
+	let input = document.getElementById("e-mail");
+    localStorage.setItem("user_mail", input.value);
+	console.log(input.value)
+	let clientsMail = document.querySelector(".customized_mail");
+	clientsMail.innerHTML = input.value;
+}
+
+let PackagePrice = document.querySelector(".package_price");
+PackagePrice.innerHTML = "10.850 dkk"

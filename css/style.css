@@ -1,25 +1,10 @@
-body {
+html,body {
 	width: 100%;
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
 	height: 100%;
 }
-
-/*
-
-to do 
-
-1. slideshow on click
-
-3. change of amount - not fixed but dynamic + barcodes and border bottom  - ask front -end dev maybe some framework? with all the opportunities of client choice is extremely big amount of work to code.
-
-5. progress bar animation doesnt work on 66% and 100%. it indicates the longer width of the bar but it doesn't animate it.
-
-6. cms data under summary - I'm not sure it's necessary or maybe it can be hardcoded?
-
-7. fetch the e-mail adress from form to conirmation page.
-*/
 
 /* mobile first */
 
@@ -1624,7 +1609,9 @@ form fieldset button {
 	margin-block-start: 0em;
 	margin-block-end: 0em;
 }
-
+.customized_mail{
+	color: #EB5D1B;
+}
 @media (max-width: 360px) {
 	.Highlight {
 		grid-template-columns: 35% 65%;
@@ -1875,7 +1862,7 @@ form fieldset button {
 		margin-top: 8px;
 		position: absolute;
 		width: 50%;
-		height: 100%;
+		height: 80vh;
 		display: block;
 		top: 60px;
 		left: 50%;
@@ -2258,12 +2245,14 @@ form fieldset button {
 
 	}
 	.vinyl_plate {
-		background: url("images/vinyl_plate.png") center no-repeat;
-		width: 100%;
-		height: 140vh;
-		animation: rotate 3s infinite linear;
-		background-size: cover;
-		overflow-y: scroll;
+		    background: url(images/vinyl_plate.png) center no-repeat;
+    width: 95%;
+    height: 1000px;
+    animation: rotate 3s infinite linear;
+    background-size: cover;
+    overflow-y: scroll;
+    max-height: 1500px;
+    margin: 0 auto;
 
 	}
 
@@ -2369,8 +2358,9 @@ form fieldset button {
 		padding: 0;
 		position: -webkit-sticky;
 		position: sticky;
-		top: 118px;
+		top: 115px;
 		right: 0;
+		
 
 	}
 	.configurator-wrapper .live_preview .summary {
@@ -2409,9 +2399,6 @@ form fieldset button {
 	.configurator-wrapper .live_preview .vinyl_preview_image {
 		margin: 0 auto;
 		padding: 15px 0;
-	}
-	.configurator-wrapper .live_preview .vinyl_preview_image img {
-		width: 100%
 	}
 	.configurator-wrapper .live_preview .technical_specifications p {
 		font-weight: 100;
@@ -2548,6 +2535,10 @@ form fieldset button {
 	}
 	.step_1_questions .q1 .vinyl_amounts_slider {
 		grid-template-columns: 19% 19% 18% 20% 19% 19%;
+	}
+	.configurator-wrapper .live_preview .vinyl_preview_image img {
+    width: 100%;
+    padding: 0 10px;
 	}
 
 }
