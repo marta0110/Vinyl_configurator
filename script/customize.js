@@ -28,7 +28,7 @@ function addImgSeven() {
 	seven.style.backgroundImage = "url('css/images/7_hovered.png')";
 	twelve.style.backgroundImage = "url('css/images/12_nothovered.png')";
 	vinylImage.setAttribute('src', 'images/vinyl_7.png');
-	vinylImage.style.padding = "80px 0";
+	vinylImage.style.padding = "120px 0";
 	vinylSizeHeadline.innerHTML = "Single 7''";
 	rpm.innerHTML = "45"
 }
@@ -36,7 +36,7 @@ function addImgSeven() {
 function addImgTwelve() {
 	twelve.style.backgroundImage = "url('css/images/12_hovered.png')";
 	seven.style.backgroundImage = "url('css/images/7_nothovered.png')";
-	vinylImage.style.padding = "0";
+	vinylImage.style.padding = "0 50px";
 	vinylImage.setAttribute('src', 'images/vinyl.png');
 	vinylSizeHeadline.innerHTML = "Standard 12''";
 	rpm.innerHTML = "33"

@@ -247,6 +247,3 @@ function saveData(){
 	let clientsMail = document.querySelector(".customized_mail");
 	clientsMail.innerHTML = input.value;
 }
-
-let PackagePrice = document.querySelector(".package_price");
-PackagePrice.innerHTML = "10.850 dkk"

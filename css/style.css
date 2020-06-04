@@ -2245,13 +2245,12 @@ form fieldset button {
 
 	}
 	.vinyl_plate {
-		    background: url(images/vinyl_plate.png) center no-repeat;
+	background: url(images/vinyl_plate.png) center no-repeat;
     width: 95%;
-    height: 1000px;
+    height: 150vh;
     animation: rotate 3s infinite linear;
     background-size: cover;
     overflow-y: scroll;
-    max-height: 1500px;
     margin: 0 auto;
 
 	}
@@ -2538,7 +2537,7 @@ form fieldset button {
 	}
 	.configurator-wrapper .live_preview .vinyl_preview_image img {
     width: 100%;
-    padding: 0 10px;
+    padding: 0 50px;
 	}
 
 }
